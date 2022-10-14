@@ -2,12 +2,11 @@
 	"name": "fluent-ui-vscode",
 	"displayName": "Fluent UI for VSCode",
 	"description": "Fluent UI for VSCode",
-	"version": "7.1.0",
-	"publisher": "be5invis",
+	"version": "1.0.0",
+	"publisher": "notAperson535",
 	"author": {
-		"email": "belleve@typeof.net",
-		"name": "Belleve Invis",
-		"url": "https://typeof.net"
+		"email": "notaperson939@gmail.com",
+		"name": "notAperson535",
 	},
 	"engines": {
 		"vscode": "^1.70.0"
@@ -18,10 +17,10 @@
 	],
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/be5invis/vscode-custom-css"
+		"url": "https://github.com/notAperson535/fluent-ui-vscode"
 	},
 	"bugs": {
-		"url": "https://github.com/be5invis/vscode-custom-css/issues"
+		"url": "https://github.com/notAperson535/fluent-ui-vscode/issues"
 	},
 	"preview": true,
 	"icon": "images/logo.png",
