@@ -1,7 +1,7 @@
 name: Build
 on: workflow_dispatch
 jobs:
-  Explore-GitHub-Actions:
+  Build:
     runs-on: ubuntu-latest
     steps:
       - run: git clone https://github.com/notAperson55/fluent-ui-vscode.git
