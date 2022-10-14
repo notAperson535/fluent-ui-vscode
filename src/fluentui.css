@@ -1,0 +1,118 @@
+:root{
+    --border: 2px solid #eaeaea;
+}
+
+@font-face {
+    font-family: 'Segoe UI Variable';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Segoe UI Variable'), url('https://fonts.cdnfonts.com/s/63254/SegoeUIVF.woff') format('woff');
+}
+
+*{
+    font-family: "Segoe UI Variable", Consolas, "Courier New", monospace;
+}
+
+.monaco-workbench .part.titlebar{
+    background: none !important;
+}
+
+.part.activitybar{
+    background: none !important;
+}
+
+.monaco-workbench .activitybar>.content :not(.monaco-menu)>.monaco-action-bar .action-label{
+    color: gray !important;
+}
+
+.action-item icon.checked:hover{
+    color: black !important;
+}
+
+.part.sidebar.left {
+    height: calc(100% - 20px);
+    margin-top: 10px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 8px lightgrey;
+    background-color: rgba(255,255,255,0.5) !important;
+    backdrop-filter: blur(12px) saturate(1);
+    outline: var(--border);
+    margin-left: 5px;
+    margin-right: 10px;
+}
+
+.monaco-button{
+    border-radius: 4px;
+}
+
+.part.editor{
+    border-radius: 8px;
+}
+
+.tabs-container{
+    margin-left: 8px
+}
+
+.tab{
+    border-radius: 8px 8px 0px 0px;
+    border: var(--border);
+    border-bottom: none;
+    margin: 0px 2px;
+}
+
+.tabs-breadcrumbs{
+    border-radius: 8px 8px 0px 0px;
+    overflow: hidden;
+}
+
+.monaco-workbench .pane>.pane-body .welcome-view-content{
+    padding: 0 40px 1em 20px;
+}
+
+ .part.sidebar>.title>.title-label h2{
+    font-size: 17px;
+    font-weight: 600;
+    color: black !important;
+}
+
+.quick-input-widget{
+    background-color: rgba(255,255,255,0.5) !important;
+    backdrop-filter: blur(12px) saturate(1);
+    border-radius: 10px;
+}
+
+.monaco-list-rows{
+    background: none !important;
+}
+
+.monaco-findInput .monaco-inputbox{
+    border-radius: 4px !important;
+}
+
+.monaco-editor .find-widget.visible{
+    background-color: rgba(255,255,255,0.5) !important;
+    backdrop-filter: blur(12px) saturate(1);
+    border-radius: 8px;
+}
+
+.context-view{
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 5px 5px 8px lightgrey;
+    background-color: rgba(255,255,255,0.5) !important;
+    backdrop-filter: blur(12px) saturate(1);
+}
+
+.context-view div{
+    background: none !important;
+}
+
+.notifications-list-container{
+    background-color: rgba(255,255,255,0.5) !important;
+    backdrop-filter: blur(12px) saturate(1);
+}
+
+.notification-toast.notification-fade-in-done{
+    border-radius: 8px;
+    overflow: hidden;
+}
