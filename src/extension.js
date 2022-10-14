@@ -101,10 +101,8 @@ function activate(context) {
 	// #### Patching ##############################################################
 
 	async function performPatch(uuidSession) {
-		const config = "/fluentui.css"
-		if (!patchIsProperlyConfigured(config)) {
-			return vscode.window.showInformationMessage(msg.notConfigured);
-		}
+		const config = ["file:///" + (path.join(__dirname, "/fluentui.css")).replaceAll("\\", "/")]
+		vscode.window.showInformationMessage(config)
 
 		let html = await fs.promises.readFile(htmlFile, "utf-8");
 		html = clearExistingPatches(html);
@@ -146,7 +144,7 @@ function activate(context) {
 
 	async function patchHtml(config) {
 		let res = "";
-		for (const item of config.imports) {
+		for (const item of config) {
 			const imp = await patchHtmlForItem(item);
 			if (imp) res += imp;
 		}
