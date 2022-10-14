@@ -200,22 +200,22 @@ function activate(context) {
 			.then(reloadWindow);
 	}
 
-	const installCustomCSS = vscode.commands.registerCommand(
-		"extension.installCustomCSS",
+	const installFluentUIVSCode = vscode.commands.registerCommand(
+		"extension.enableFluentUIVSCode",
 		cmdInstall
 	);
-	const uninstallCustomCSS = vscode.commands.registerCommand(
-		"extension.uninstallCustomCSS",
+	const uninstallFluentUIVSCode = vscode.commands.registerCommand(
+		"extension.disableFluentUIVScode",
 		cmdUninstall
 	);
-	const updateCustomCSS = vscode.commands.registerCommand(
-		"extension.updateCustomCSS",
+	const reloadFluentUIVSCode = vscode.commands.registerCommand(
+		"extension.reloadFluentUIVSCode",
 		cmdReinstall
 	);
 
-	context.subscriptions.push(installCustomCSS);
-	context.subscriptions.push(uninstallCustomCSS);
-	context.subscriptions.push(updateCustomCSS);
+	context.subscriptions.push(installFluentUIVSCode);
+	context.subscriptions.push(uninstallFluentUIVSCode);
+	context.subscriptions.push(reloadFluentUIVSCode);
 
 	console.log("vscode-custom-css is active!");
 	console.log("Application directory", appDir);

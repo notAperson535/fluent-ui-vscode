@@ -1,5 +1,5 @@
 :root{
-    --border: 2px solid #eaeaea;
+    --outline: 2px solid #eaeaea;
 }
 
 @font-face {
@@ -36,7 +36,7 @@
     box-shadow: 5px 5px 8px lightgrey;
     background-color: rgba(255,255,255,0.5) !important;
     backdrop-filter: blur(12px) saturate(1);
-    outline: var(--border);
+    outline: var(--outline);
     margin-left: 5px;
     margin-right: 10px;
 }
@@ -55,9 +55,10 @@
 
 .tab{
     border-radius: 8px 8px 0px 0px;
-    border: var(--border);
-    border-bottom: none;
+    outline: var(--outline);
     margin: 0px 2px;
+    margin-top: 2px;
+    height: 33px !important;
 }
 
 .tabs-breadcrumbs{
@@ -69,7 +70,7 @@
     padding: 0 40px 1em 20px;
 }
 
- .part.sidebar>.title>.title-label h2{
+.part.sidebar>.title>.title-label h2{
     font-size: 17px;
     font-weight: 600;
     color: black !important;

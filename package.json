@@ -34,15 +34,15 @@
 	"contributes": {
 		"commands": [
 			{
-				"command": "extension.installCustomCSS",
+				"command": "extension.enableFluentUIVSCode",
 				"title": "Enable Fluent UI for VSCode"
 			},
 			{
-				"command": "extension.uninstallCustomCSS",
+				"command": "extension.disableFluentUIVScode",
 				"title": "Disable Fluent UI for VSCode"
 			},
 			{
-				"command": "extension.updateCustomCSS",
+				"command": "extension.reloadFluentUIVSCode",
 				"title": "Reload Fluent UI for VSCode"
 			}
 		],
