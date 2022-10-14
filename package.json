@@ -1,7 +1,7 @@
 {
 	"name": "vscode-custom-css",
-	"displayName": "Custom CSS and JS Loader",
-	"description": "Custom CSS and JS for Visual Studio Code",
+	"displayName": "Fluent UI for VSCode",
+	"description": "Fluent UI for VSCode",
 	"version": "7.1.0",
 	"publisher": "be5invis",
 	"author": {
@@ -36,15 +36,15 @@
 		"commands": [
 			{
 				"command": "extension.installCustomCSS",
-				"title": "Enable Custom CSS and JS"
+				"title": "Enable Fluent UI for VSCode"
 			},
 			{
 				"command": "extension.uninstallCustomCSS",
-				"title": "Disable Custom CSS and JS"
+				"title": "Disable Fluent UI for VSCode"
 			},
 			{
 				"command": "extension.updateCustomCSS",
-				"title": "Reload Custom CSS and JS"
+				"title": "Reload Fluent UI for VSCode"
 			}
 		],
 		"configuration": {
