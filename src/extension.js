@@ -101,7 +101,7 @@ function activate(context) {
 	// #### Patching ##############################################################
 
 	async function performPatch(uuidSession) {
-		const config = "fluentui.css"
+		const config = "/fluentui.css"
 		if (!patchIsProperlyConfigured(config)) {
 			return vscode.window.showInformationMessage(msg.notConfigured);
 		}
