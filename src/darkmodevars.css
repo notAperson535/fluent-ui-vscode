@@ -1,0 +1,6 @@
+:root {
+    --outline: 2px solid #151515;
+    --blurred-background: rgba(0, 0, 0, 0.5);
+    --shadow: 5px 5px 8px #2c2c2c;
+    --text-color: white;
+}

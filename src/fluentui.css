@@ -1,5 +1,8 @@
-:root{
+:root {
     --outline: 2px solid #eaeaea;
+    --blurred-background: rgba(255, 255, 255, 0.5);
+    --shadow: 5px 5px 8px #d3d3d3;
+    --text-color: black;
 }
 
 @font-face {
@@ -9,47 +12,47 @@
     src: local('Segoe UI Variable'), url('https://fonts.cdnfonts.com/s/63254/SegoeUIVF.woff') format('woff');
 }
 
-*{
+* {
     font-family: "Segoe UI Variable", Consolas, "Courier New", monospace;
 }
 
-.monaco-workbench .part.titlebar{
+.monaco-workbench .part.titlebar {
     background: none !important;
 }
 
-.part.activitybar{
+.part.activitybar {
     background: none !important;
 }
 
-.monaco-workbench .activitybar>.content :not(.monaco-menu)>.monaco-action-bar .action-label{
+.monaco-workbench .activitybar>.content :not(.monaco-menu)>.monaco-action-bar .action-label {
     color: gray !important;
 }
 
-.action-item icon.checked:hover{
-    color: black !important;
+.action-item icon.checked:hover {
+    color: var(--text-color) !important;
 }
 
 .part.sidebar.left {
     height: calc(100% - 20px);
     margin-top: 10px;
     border-radius: 10px;
-    box-shadow: 5px 5px 8px lightgrey;
-    background-color: rgba(255,255,255,0.5) !important;
+    box-shadow: var(--shadow);
+    background-color: var(--blurred-background) !important;
     backdrop-filter: blur(12px) saturate(1);
     outline: var(--outline);
     margin-left: 5px;
     margin-right: 10px;
 }
 
-.monaco-button{
+.monaco-button {
     border-radius: 4px;
 }
 
-.tabs-container{
+.tabs-container {
     margin-left: 8px
 }
 
-.tab{
+.tab {
     border-radius: 8px 8px 0px 0px;
     outline: var(--outline);
     margin: 0px 2px;
@@ -57,65 +60,65 @@
     height: 33px !important;
 }
 
-.tabs-breadcrumbs{
+.tabs-breadcrumbs {
     border-radius: 8px 0px 0px 0px;
     overflow: hidden;
 }
 
-.monaco-workbench .pane>.pane-body .welcome-view-content{
+.monaco-workbench .pane>.pane-body .welcome-view-content {
     padding: 0 40px 1em 20px;
 }
 
-.part.sidebar>.title>.title-label h2{
+.part.sidebar>.title>.title-label h2 {
     font-size: 17px;
     font-weight: 600;
-    color: black !important;
+    color: var(--text-color) !important;
 }
 
-.quick-input-widget{
-    background-color: rgba(255,255,255,0.5) !important;
+.quick-input-widget {
+    background-color: var(--blurred-background) !important;
     backdrop-filter: blur(12px) saturate(1);
     border-radius: 10px;
     overflow: hidden;
 }
 
-.monaco-list-rows{
+.monaco-list-rows {
     background: none !important;
 }
 
-.monaco-findInput .monaco-inputbox{
+.monaco-findInput .monaco-inputbox {
     border-radius: 4px !important;
     overflow: hidden;
 }
 
-.monaco-editor .find-widget.visible{
-    background-color: rgba(255,255,255,0.5) !important;
+.monaco-editor .find-widget.visible {
+    background-color: var(--blurred-background) !important;
     backdrop-filter: blur(12px) saturate(1);
     border-radius: 8px;
 }
 
-.context-view{
+.context-view {
     border-radius: 4px;
     overflow: hidden;
-    box-shadow: 5px 5px 8px lightgrey;
-    background-color: rgba(255,255,255,0.5) !important;
+    box-shadow: var(--shadow);
+    background-color: var(--blurred-background) !important;
     backdrop-filter: blur(12px) saturate(1);
 }
 
-.context-view div{
+.context-view div {
     background: none !important;
 }
 
-.notifications-list-container{
-    background-color: rgba(255,255,255,0.5) !important;
+.notifications-list-container {
+    background-color: var(--blurred-background) !important;
     backdrop-filter: blur(12px) saturate(1);
 }
 
-.notification-toast.notification-fade-in-done{
+.notification-toast.notification-fade-in-done {
     border-radius: 8px;
     overflow: hidden;
 }
 
-.monaco-workbench .activitybar>.content :not(.monaco-menu)>.monaco-action-bar .action-item:hover{
+.monaco-workbench .activitybar>.content :not(.monaco-menu)>.monaco-action-bar .action-item:hover {
     filter: invert(1) !important;
 }

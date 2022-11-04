@@ -101,7 +101,16 @@ function activate(context) {
 	// #### Patching ##############################################################
 
 	async function performPatch(uuidSession) {
-		const config = ["file:///" + (path.join(__dirname, "/fluentui.css")).replaceAll("\\", "/")]
+		let config = ""
+
+		const colortheme = vscode.workspace.getConfiguration().get("fluent-ui-vscode.theme");
+		if (colortheme == "dark") {
+			config = ["file:///" + (path.join(__dirname, "/fluentui.css")).replaceAll("\\", "/"), "file:///" + (path.join(__dirname, "/darkmodevars.css")).replaceAll("\\", "/")]
+		}
+		else {
+			config = ["file:///" + (path.join(__dirname, "/fluentui.css")).replaceAll("\\", "/")]
+		}
+
 		vscode.window.showInformationMessage(config)
 
 		let html = await fs.promises.readFile(htmlFile, "utf-8");
@@ -116,10 +125,10 @@ function activate(context) {
 		html = html.replace(
 			/(<\/html>)/,
 			`<!-- !! VSCODE-CUSTOM-CSS-SESSION-ID ${uuidSession} !! -->\n` +
-				"<!-- !! VSCODE-CUSTOM-CSS-START !! -->\n" +
-				indicatorJS +
-				injectHTML +
-				"<!-- !! VSCODE-CUSTOM-CSS-END !! -->\n</html>"
+			"<!-- !! VSCODE-CUSTOM-CSS-START !! -->\n" +
+			indicatorJS +
+			injectHTML +
+			"<!-- !! VSCODE-CUSTOM-CSS-END !! -->\n</html>"
 		);
 		try {
 			await fs.promises.writeFile(htmlFile, html, "utf-8");
@@ -224,5 +233,5 @@ function activate(context) {
 exports.activate = activate;
 
 // this method is called when your extension is deactivated
-function deactivate() {}
+function deactivate() { }
 exports.deactivate = deactivate;
