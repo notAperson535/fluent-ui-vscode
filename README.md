@@ -20,6 +20,14 @@ Custom CSS to your Visual Studio Code. Based on [be5invis](https://github.com/be
 4. Restart VSCode.
 
 
+## Enabling dark mode
+
+If you would like to use dark mode, just add this setting in the user settings json file for VSCode
+
+```
+"fluent-ui-vscode.theme": "dark"
+```
+
 ## Extension commands
 
 As you know to access the command palette and introduce commands you can use ***F1*** (all OSes), ***Ctrl+Shift+P*** (Windows & Linux) or ***Cmd+Shift+P*** (OS X).
@@ -57,12 +65,12 @@ Mac and Linux package managers may have customized installation path. Please dou
 # Disclaimer
 
 This extension modifies some Visual Studio Code files so use it at your own risk.
-Currently, icons are not supported by the extension functionality that Visual Studio Code provides so this extension solves this issue by injecting code into:
+Currently, this is not supported by the extension functionality that Visual Studio Code provides so this extension solves this issue by injecting code into:
 
 - `electron-browser/index.html`.
 
 The extension will keep a copy of the original file in case something goes wrong. That's what the disable command will do for you.
 
-As this extension modifies Visual Studio Code files, it will get disabled with every Visual Studio Code update. You will have to enable icons again via the command palette.
+As this extension modifies Visual Studio Code files, it will get disabled with every Visual Studio Code update. You will have to enable it again via the command palette.
 
 Take into account that this extension is still in beta, so you may find some bugs while playing with it. Please, report them to [the issues section of the Github's repo](https://github.com/notAperson535/fluent-ui-vscode/issues).
