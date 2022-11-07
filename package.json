@@ -1,7 +1,7 @@
 {
-	"name": "fluent-ui-vscode",
-	"displayName": "Fluent UI for VSCode",
-	"description": "Fluent UI for VSCode",
+	"name": "windows-11-vscode",
+	"displayName": "Windows 11 Theme for VSCode",
+	"description": "Windows 11 Theme for VSCode",
 	"version": "1.1.2",
 	"publisher": "notAperson535",
 	"author": {
@@ -17,10 +17,10 @@
 	],
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/notAperson535/fluent-ui-vscode"
+		"url": "https://github.com/notAperson535/windows-11-vscode"
 	},
 	"bugs": {
-		"url": "https://github.com/notAperson535/fluent-ui-vscode/issues"
+		"url": "https://github.com/notAperson535/windows-11-vscode/issues"
 	},
 	"preview": true,
 	"icon": "images/logo.png",
@@ -35,15 +35,15 @@
 		"commands": [
 			{
 				"command": "extension.enableFluentUIVSCode",
-				"title": "Enable Fluent UI for VSCode"
+				"title": "Enable Windows 11 for VSCode"
 			},
 			{
 				"command": "extension.disableFluentUIVScode",
-				"title": "Disable Fluent UI for VSCode"
+				"title": "Disable Windows 11 for VSCode"
 			},
 			{
 				"command": "extension.reloadFluentUIVSCode",
-				"title": "Reload Fluent UI for VSCode"
+				"title": "Reload Windows 11 for VSCode"
 			}
 		],
 		"configuration": {

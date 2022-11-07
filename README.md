@@ -1,7 +1,7 @@
-# Fluent UI for VSCode
+# Windows 11 for VSCode
 
 ### SPECIAL NOTE: If Visual Studio Code complains about that it is corrupted, simply click "More" and then click "Don't show again".
-### NOTE: Every time after Visual Studio Code is updated, please re-enable Fluent UI.
+### NOTE: Every time after Visual Studio Code is updated, please re-enable Windows 11.
 
 Custom CSS to your Visual Studio Code. Based on [be5invis](https://github.com/be5invis)’s [vscode-customize-css](https://github.com/be5invis/vscode-custom-css).
 
@@ -15,7 +15,7 @@ Custom CSS to your Visual Studio Code. Based on [be5invis](https://github.com/be
 
    2. **MacOS and Linux**: See instructions below.
 
-3 Open the command menu (ctrl+shift+p for Windows, command+shift+p for macOS), and then run `Enable Fluent UI for VSCode`.
+3 Open the command menu (ctrl+shift+p for Windows, command+shift+p for macOS), and then run `Enable Windows 11 for VSCode`.
 
 4. Restart VSCode.
 
@@ -32,9 +32,9 @@ If you would like to use dark mode, just add this setting in the user settings j
 
 As you know to access the command palette and introduce commands you can use ***F1*** (all OSes), ***Ctrl+Shift+P*** (Windows & Linux) or ***Cmd+Shift+P*** (OS X).
 
-- ***Enable Fluent UI for VSCode***: Enables Fluent UI.
-- ***Disable Fluent UI for VSCode***: Disables Fluent UI.
-- ***Reload Fluent UI for VSCode***: Disables and then re-enables Fluent UI.
+- ***Enable Windows 11 for VSCode***: Enables Windows 11.
+- ***Disable Windows 11 for VSCode***: Disables Windows 11.
+- ***Reload Windows 11 for VSCode***: Disables and then re-enables Windows 11.
 
 ## Windows users
 
