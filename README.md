@@ -1,4 +1,4 @@
-# Windows 11 for VSCode
+# Windows 11 Theme for VSCode
 
 ### SPECIAL NOTE: If Visual Studio Code complains about that it is corrupted, simply click "More" and then click "Don't show again".
 ### NOTE: Every time after Visual Studio Code is updated, please re-enable Windows 11.
@@ -32,9 +32,9 @@ If you would like to use dark mode, just add this setting in the user settings j
 
 As you know to access the command palette and introduce commands you can use ***F1*** (all OSes), ***Ctrl+Shift+P*** (Windows & Linux) or ***Cmd+Shift+P*** (OS X).
 
-- ***Enable Windows 11 for VSCode***: Enables Windows 11.
-- ***Disable Windows 11 for VSCode***: Disables Windows 11.
-- ***Reload Windows 11 for VSCode***: Disables and then re-enables Windows 11.
+- ***Enable Windows 11 for VSCode***: Enables Windows 11 for VSCode.
+- ***Disable Windows 11 for VSCode***: Disables Windows 11 for VSCode.
+- ***Reload Windows 11 for VSCode***: Disables and then re-enables Windows 11 for VSCode.
 
 ## Windows users
 
