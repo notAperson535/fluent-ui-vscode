@@ -209,22 +209,22 @@ function activate(context) {
 			.then(reloadWindow);
 	}
 
-	const installFluentUIVSCode = vscode.commands.registerCommand(
-		"extension.enableFluentUIVSCode",
+	const installWindows11VSCode = vscode.commands.registerCommand(
+		"extension.enableWindows11VSCode",
 		cmdInstall
 	);
-	const uninstallFluentUIVSCode = vscode.commands.registerCommand(
-		"extension.disableFluentUIVScode",
+	const uninstallWindows11VSCode = vscode.commands.registerCommand(
+		"extension.disableWindows11VSCode",
 		cmdUninstall
 	);
-	const reloadFluentUIVSCode = vscode.commands.registerCommand(
-		"extension.reloadFluentUIVSCode",
+	const reloadWindows11VSCode = vscode.commands.registerCommand(
+		"extension.reloadWindows11VSCode",
 		cmdReinstall
 	);
 
-	context.subscriptions.push(installFluentUIVSCode);
-	context.subscriptions.push(uninstallFluentUIVSCode);
-	context.subscriptions.push(reloadFluentUIVSCode);
+	context.subscriptions.push(installWindows11VSCode);
+	context.subscriptions.push(uninstallWindows11VSCode);
+	context.subscriptions.push(reloadWindows11VSCode);
 
 	console.log("vscode-custom-css is active!");
 	console.log("Application directory", appDir);

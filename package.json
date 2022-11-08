@@ -28,21 +28,23 @@
 		"color": "#EEEEEE"
 	},
 	"activationEvents": [
-		"*"
+		"onCommand:extension.enableWindows11VSCode",
+		"onCommand:extension.disableWindows11VSCode",
+		"onCommand:extension.reloadWindows11VSCode"
 	],
 	"main": "./src/extension",
 	"contributes": {
 		"commands": [
 			{
-				"command": "extension.enableFluentUIVSCode",
+				"command": "extension.enableWindows11VSCode",
 				"title": "Enable Windows 11 for VSCode"
 			},
 			{
-				"command": "extension.disableFluentUIVScode",
+				"command": "extension.disableWindows11VSCode",
 				"title": "Disable Windows 11 for VSCode"
 			},
 			{
-				"command": "extension.reloadFluentUIVSCode",
+				"command": "extension.reloadWindows11VSCode",
 				"title": "Reload Windows 11 for VSCode"
 			}
 		],
