@@ -1,5 +1,8 @@
 # Changelog
 
+## 1.1.5
+Fix sidebar border
+
 ## 1.1.4
 
 Made extension faster
