@@ -39,7 +39,7 @@
     box-shadow: var(--shadow);
     background-color: var(--blurred-background) !important;
     backdrop-filter: blur(12px) saturate(1);
-    outline: var(--outline);
+    border: var(--outline);
     margin-left: 5px;
     margin-right: 10px;
 }
