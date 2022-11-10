@@ -1,5 +1,8 @@
 # Changelog
 
+## 1.1.6
+Fix sidebar elements (again)
+
 ## 1.1.5
 Fix sidebar border
 
