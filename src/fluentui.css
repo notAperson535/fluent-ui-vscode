@@ -69,6 +69,10 @@
     padding: 0 40px 1em 20px;
 }
 
+.composite.viewlet {
+    width: calc(100% - 19px);
+}
+
 .part.sidebar>.title>.title-label h2 {
     font-size: 17px;
     font-weight: 600;
