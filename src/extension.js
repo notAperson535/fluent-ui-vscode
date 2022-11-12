@@ -103,9 +103,21 @@ function activate(context) {
 	async function performPatch(uuidSession) {
 		let config = ""
 
-		const colortheme = vscode.workspace.getConfiguration().get("fluent-ui-vscode.theme");
+		const colortheme = vscode.workspace.getConfiguration().get("windows-11-vscode.theme");
 		if (colortheme == "dark") {
 			config = ["file:///" + (path.join(__dirname, "/fluentui.css")).replaceAll("\\", "/"), "file:///" + (path.join(__dirname, "/darkmodevars.css")).replaceAll("\\", "/")]
+		}
+		else if (colortheme == "darkblue") {
+			config = ["file:///" + (path.join(__dirname, "/fluentui.css")).replaceAll("\\", "/"), "file:///" + (path.join(__dirname, "/darkbluevars.css")).replaceAll("\\", "/")]
+		}
+		else if (colortheme == "gray") {
+			config = ["file:///" + (path.join(__dirname, "/fluentui.css")).replaceAll("\\", "/"), "file:///" + (path.join(__dirname, "/grayvars.css")).replaceAll("\\", "/")]
+		}
+		else if (colortheme == "green") {
+			config = ["file:///" + (path.join(__dirname, "/fluentui.css")).replaceAll("\\", "/"), "file:///" + (path.join(__dirname, "/greenvars.css")).replaceAll("\\", "/")]
+		}
+		else if (colortheme == "fuchisa") {
+			config = ["file:///" + (path.join(__dirname, "/fluentui.css")).replaceAll("\\", "/"), "file:///" + (path.join(__dirname, "/fuchisavars.css")).replaceAll("\\", "/")]
 		}
 		else {
 			config = ["file:///" + (path.join(__dirname, "/fluentui.css")).replaceAll("\\", "/")]

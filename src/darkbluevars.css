@@ -1,0 +1,10 @@
+:root {
+    --outline: 2px solid #4c00ff;
+    --blurred-background: rgba(76, 0, 255, 0.5);
+    --shadow: 5px 5px 8px #2c2c2c;
+    --text-color: white;
+}
+
+.monaco-workbench .activitybar>.content :not(.monaco-menu)>.monaco-action-bar .action-item:hover {
+    filter: invert(0) !important;
+}

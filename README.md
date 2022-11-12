@@ -25,7 +25,7 @@ Custom CSS to your Visual Studio Code. Based on [be5invis](https://github.com/be
 If you would like to use dark mode, just add this setting in the user settings json file for VSCode
 
 ```
-"fluent-ui-vscode.theme": "dark"
+"windows-11-vscode.theme": "dark"
 ```
 
 ## Extension commands
