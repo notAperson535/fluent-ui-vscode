@@ -126,3 +126,9 @@
 .monaco-workbench .activitybar>.content :not(.monaco-menu)>.monaco-action-bar .action-item:hover {
     filter: invert(1) !important;
 }
+
+body{
+    background-image: url("/images/Windows\ 11\ Wallpaper\ 1.jpg");
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: saturate(3) blur(20px);
+}
