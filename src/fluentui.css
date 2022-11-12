@@ -5,6 +5,19 @@
     --text-color: black;
 }
 
+body {
+    background: url("https://raw.githubusercontent.com/notAperson535/Win11-HTML/main/img/backgroundlight.jpg") !important;
+}
+
+.monaco-workbench {
+    background: none !important;
+}
+
+.monaco-workbench {
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: saturate(3) blur(20px);
+}
+
 @font-face {
     font-family: 'Segoe UI Variable';
     font-style: normal;
@@ -53,6 +66,14 @@
     font-family: 'codicon' !important;
 }
 
+.monaco-workbench .part>.content {
+    background: none !important;
+}
+
+.monaco-workbench .part.editor>.content .editor-group-container>.title {
+    background: none !important;
+}
+
 .tabs-container {
     margin-left: 8px
 }
@@ -63,6 +84,7 @@
     margin: 0px 4px;
     margin-top: 2px;
     height: 33px !important;
+    border-right: none !important;
 }
 
 .tab[aria-selected="false"] {
