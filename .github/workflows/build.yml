@@ -1,5 +1,13 @@
 name: Build
-on: workflow_dispatch
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+      
+  workflow_dispatch:
 jobs:
   Build:
     runs-on: ubuntu-latest
@@ -9,5 +17,5 @@ jobs:
       
       - uses: actions/upload-artifact@v3
         with:
-          name: my-artifact
-          path: fluent-ui-vscode-*.vsix
+          name: VSIX Package
+          path: windows-11-vscode-*.vsix
