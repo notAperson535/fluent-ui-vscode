@@ -159,8 +159,11 @@ body {
     filter: invert(1) !important;
 }
 
-:root {
-    background-image: url("https: //lh3.googleusercontent.com/drive-viewer/AFDK6gMXzuwdILeyOJEsGVu3pNEKQ7ZYSQsGJWcX9JWcU5-2YwNo8NmqKyCa3q3wZh8acQQQtwp0bo3orMPR8KqhZP3CwWXnZQ=w1920-h969");
+body {
+    background-image: url("https://raw.githubusercontent.com/notAperson535/Win11-HTML/main/img/backgroundlight.jpg");
+}
+
+.monaco-workbench {
     background: rgba(255, 255, 255, 0.8);
     backdrop-filter: saturate(3) blur(20px);
 }
