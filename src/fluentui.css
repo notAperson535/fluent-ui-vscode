@@ -48,6 +48,11 @@
     border-radius: 4px;
 }
 
+.codicon-extensions-manage:before {
+    content: '\ea7c' !important;
+    font-family: 'codicon' !important;
+}
+
 .tabs-container {
     margin-left: 8px
 }
@@ -127,7 +132,7 @@
     filter: invert(1) !important;
 }
 
-:root{
+:root {
     background-image: url("https: //lh3.googleusercontent.com/drive-viewer/AFDK6gMXzuwdILeyOJEsGVu3pNEKQ7ZYSQsGJWcX9JWcU5-2YwNo8NmqKyCa3q3wZh8acQQQtwp0bo3orMPR8KqhZP3CwWXnZQ=w1920-h969");
     background: rgba(255, 255, 255, 0.8);
     backdrop-filter: saturate(3) blur(20px);
