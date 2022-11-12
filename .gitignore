@@ -3,4 +3,4 @@ test
 .vscode
 .vsixmanifest
 .staging-custom-css
-fluent-ui-vscode-*.vsix
+windows-11-vscode-*.vsix

@@ -65,6 +65,11 @@
     height: 33px !important;
 }
 
+.tab[aria-selected="false"] {
+    background: none !important;
+    outline: none !important;
+}
+
 .tabs-breadcrumbs {
     border-radius: 8px 0px 0px 0px;
     overflow: hidden;
