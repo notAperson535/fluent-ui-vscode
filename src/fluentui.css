@@ -97,6 +97,23 @@ body {
     overflow: hidden;
 }
 
+.monaco-breadcrumbs {
+    background: var(--blurred-background) !important;
+    backdrop-filter: blur(12px) saturate(1);
+}
+
+.editor-container {
+    background: var(--blurred-background) !important;
+    backdrop-filter: blur(12px) saturate(1);
+}
+
+.monaco-editor,
+.monaco-editor .margin,
+.lines-content monaco-editor-background,
+.monaco-editor-background {
+    background: none !important;
+}
+
 .monaco-workbench .pane>.pane-body .welcome-view-content {
     padding: 0 40px 1em 20px;
 }
