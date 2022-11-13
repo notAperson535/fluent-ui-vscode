@@ -49,22 +49,12 @@
 			}
 		],
 		"configuration": {
-			"title": "Custom CSS/JS Configuration",
+			"title": "Windows 11 for VSCode",
 			"properties": {
-				"vscode_custom_css.imports": {
-					"description": "Custom CSS/JS files, as an array of URLs, not file paths",
-					"type": "array",
-					"default": []
-				},
-				"vscode_custom_css.statusbar": {
-					"description": "Enable Status Indicator",
-					"type": "boolean",
-					"default": true
-				},
-				"vscode_custom_css.staging_dir": {
-					"description": "Directory used for storing staged CSS/JS files. Must be inside VSCode's extension directory, otherwise VSCode will refuse to load the your custom CSS/JS.",
+				"windows-11-vscode.theme": {
+					"description": "Windows 11 for VSCode theme",
 					"type": "string",
-					"default": ""
+					"default": "light"
 				}
 			}
 		}
