@@ -85,6 +85,8 @@ body {
     margin-top: 2px;
     height: 33px !important;
     border-right: none !important;
+    background: var(--blurred-background) !important;
+    backdrop-filter: blur(12px) saturate(1);
 }
 
 .tab[aria-selected="false"] {
