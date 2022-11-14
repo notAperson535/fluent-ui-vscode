@@ -6,7 +6,7 @@
 }
 
 body {
-    background: url("https://raw.githubusercontent.com/notAperson535/Win11-HTML/main/img/backgroundlight.jpg") !important;
+    background: url("https://raw.githubusercontent.com/notAperson535/windows-11-vscode/master/images/lightbg.jpg") !important;
 }
 
 .monaco-workbench {
@@ -14,7 +14,7 @@ body {
 }
 
 .monaco-workbench {
-    background: rgba(0, 0, 0, 0.5);
+    background: var(--blurred-background) !important;
     backdrop-filter: saturate(3) blur(20px);
 }
 

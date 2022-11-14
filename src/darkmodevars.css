@@ -10,12 +10,7 @@
 }
 
 body {
-    background: url("https://raw.githubusercontent.com/notAperson535/Win11-HTML/main/img/backgrounddark.jpg") !important;
-}
-
-.monaco-workbench {
-    background: rgba(0, 0, 0, 0.5);
-    backdrop-filter: saturate(3) blur(20px);
+    background: url("https://raw.githubusercontent.com/notAperson535/windows-11-vscode/master/images/darkbg.jpg") !important;
 }
 
 .editor-group-letterpress {
