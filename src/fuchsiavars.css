@@ -1,14 +1,38 @@
 :root {
-    --outline: 2px solid #ff00ff;
-    --blurred-background: rgba(255, 0, 255, 0.5);
-    --shadow: 5px 5px 8px #ea00ff;
-    --text-color: white;
+    --outline: 2px solid rgba(242, 126, 198);
+    --blurred-background: rgba(255, 166, 201, 0.5);
+    --shadow: 5px 5px 8px #df72e9;
+    --text-color: black;
 }
+
 
 .monaco-workbench .activitybar>.content :not(.monaco-menu)>.monaco-action-bar .action-item:hover {
     filter: invert(0) !important;
 }
 
 body {
-    background: url("https://raw.githubusercontent.com/notAperson535/windows-11-vscode/master/images/fuchisabg.jpg") !important;
+    height: 100vh;
+    display: block;
+    background: url("https://github.com/notAperson535/windows-11-vscode/blob/master/images/fuchisabg.jpg") no-repeat center center fixed;
+}
+
+.monaco-workbench {
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: saturate(3) blur(20px);
+}
+
+.editor-group-letterpress {
+    filter: contrast(0);
+}
+
+.tab {
+    color: white;
+}
+
+a.label-name {
+    color: rey !important;
+}
+
+.tab[aria-selected="true"] {
+    color: white !important;
 }
