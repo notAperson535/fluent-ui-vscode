@@ -6,7 +6,10 @@
 }
 
 body {
-    background: url("https://raw.githubusercontent.com/notAperson535/windows-11-vscode/master/images/lightbg.jpg") !important;
+    background-image: url("https://raw.githubusercontent.com/notAperson535/windows-11-vscode/master/images/lightbg.jpg") !important;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .monaco-workbench {

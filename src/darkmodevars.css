@@ -10,7 +10,7 @@
 }
 
 body {
-    background: url("https://raw.githubusercontent.com/notAperson535/windows-11-vscode/master/images/darkbg.jpg") !important;
+    background-image: url("https://raw.githubusercontent.com/notAperson535/windows-11-vscode/master/images/darkbg.jpg") !important;
 }
 
 .editor-group-letterpress {

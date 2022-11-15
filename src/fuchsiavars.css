@@ -11,7 +11,7 @@
 }
 
 body {
-    background: url("https://raw.githubusercontent.com/notAperson535/windows-11-vscode/master/images/fuchsiabg.jpg") !important;
+    background-image: url("https://raw.githubusercontent.com/notAperson535/windows-11-vscode/master/images/fuchsiabg.jpg") !important;
 }
 
 .monaco-workbench {
