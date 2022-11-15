@@ -20,13 +20,17 @@ Custom CSS to your Visual Studio Code. Based on [be5invis](https://github.com/be
 4. Restart VSCode.
 
 
-## Enabling dark mode
+## Enabling different themes
 
 If you would like to use dark mode, just add this setting in the user settings json file for VSCode
+
+There are 5 theme options. light, dark, darkblue, green, and fuchsia. Here is how you would enable one.
 
 ```
 "windows-11-vscode.theme": "dark"
 ```
+
+Fuchsia uses [this theme]("https://marketplace.visualstudio.com/items?itemName=webfreak.cute-theme")
 
 ## Extension commands
 
