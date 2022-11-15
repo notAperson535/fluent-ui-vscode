@@ -116,8 +116,8 @@ function activate(context) {
 		else if (colortheme == "green") {
 			config = ["file:///" + (path.join(__dirname, "/fluentui.css")).replaceAll("\\", "/"), "file:///" + (path.join(__dirname, "/greenvars.css")).replaceAll("\\", "/")]
 		}
-		else if (colortheme == "fuchisa") {
-			config = ["file:///" + (path.join(__dirname, "/fluentui.css")).replaceAll("\\", "/"), "file:///" + (path.join(__dirname, "/fuchisavars.css")).replaceAll("\\", "/")]
+		else if (colortheme == "fuchsia") {
+			config = ["file:///" + (path.join(__dirname, "/fluentui.css")).replaceAll("\\", "/"), "file:///" + (path.join(__dirname, "/fuchsiavars.css")).replaceAll("\\", "/")]
 		}
 		else {
 			config = ["file:///" + (path.join(__dirname, "/fluentui.css")).replaceAll("\\", "/")]
