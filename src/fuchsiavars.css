@@ -13,7 +13,7 @@
 body {
     height: 100vh;
     display: block;
-    background: url("https://github.com/notAperson535/windows-11-vscode/blob/master/images/fuchsiabg.jpg") no-repeat center center fixed;
+    background: url("https://raw.githubusercontent.com/notAperson535/windows-11-vscode/master/images/fuchsiabg.jpg") no-repeat center center fixed;
 }
 
 .monaco-workbench {
