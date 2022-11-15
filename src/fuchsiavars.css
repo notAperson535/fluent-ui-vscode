@@ -34,5 +34,5 @@ a.label-name {
 }
 
 .tab[aria-selected="true"] {
-    color: white !important;
+    color: #6e6e6e !important;
 }
