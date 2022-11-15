@@ -14,21 +14,16 @@ body {
     background-image: url("https://raw.githubusercontent.com/notAperson535/windows-11-vscode/master/images/fuchsiabg.jpg") !important;
 }
 
-.monaco-workbench {
-    background: rgba(0, 0, 0, 0.5);
-    backdrop-filter: saturate(3) blur(20px);
-}
-
 .editor-group-letterpress {
-    filter: contrast(0);
+    filter: contrast(0) !important;
 }
 
 .tab {
-    color: white;
+    color: white !important;
 }
 
 a.label-name {
-    color: rey !important;
+    color: black !important;
 }
 
 .tab[aria-selected="true"] {

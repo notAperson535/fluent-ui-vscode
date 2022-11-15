@@ -18,7 +18,7 @@ body {
 
 .monaco-workbench {
     background: var(--blurred-background) !important;
-    backdrop-filter: saturate(3) blur(20px);
+    backdrop-filter: blur(12px) saturate(1);
 }
 
 @font-face {
@@ -179,13 +179,4 @@ body {
 
 .monaco-workbench .activitybar>.content :not(.monaco-menu)>.monaco-action-bar .action-item:hover {
     filter: invert(1) !important;
-}
-
-body {
-    background-image: url("https://raw.githubusercontent.com/notAperson535/Win11-HTML/main/img/backgroundlight.jpg");
-}
-
-.monaco-workbench {
-    background: rgba(255, 255, 255, 0.8);
-    backdrop-filter: saturate(3) blur(20px);
 }
