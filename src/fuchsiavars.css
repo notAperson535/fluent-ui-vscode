@@ -29,3 +29,21 @@ a.label-name {
 .tab[aria-selected="true"] {
     color: #6e6e6e !important;
 }
+
+.name, .ellipsis, .suggest-input-container {
+    color: #3f3f3f !important;
+}
+
+.suggest-input-container {
+    background-color: rgba(242, 126, 198) !important;
+    border-radius: 5px !important;
+}
+
+::before, .menu-bar-menu-title, .window-title,
+.activity-workbench-view-extension-liveshare-7853dbf2d43be293da8e0881a8ce8673d6237243 {
+    color: purple;
+}
+
+.activity-workbench-view-extension-liveshare-7853dbf2d43be293da8e0881a8ce8673d6237243{
+    background-color: purple !important;
+}
