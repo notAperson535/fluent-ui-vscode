@@ -95,6 +95,7 @@ body {
 .tab[aria-selected="false"] {
     background: none !important;
     outline: none !important;
+    backdrop-filter: none;
 }
 
 .tabs-breadcrumbs {
