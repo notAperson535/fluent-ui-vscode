@@ -30,7 +30,7 @@ There are 5 theme options. light, dark, darkblue, green, and fuchsia. Here is ho
 "windows-11-vscode.theme": "dark"
 ```
 
-Fuchsia uses [this theme]("https://marketplace.visualstudio.com/items?itemName=webfreak.cute-theme")
+Fuchsia currently uses [this theme](https://marketplace.visualstudio.com/items?itemName=webfreak.cute-theme)
 
 ## Extension commands
 
