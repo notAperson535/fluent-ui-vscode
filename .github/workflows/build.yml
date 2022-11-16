@@ -12,7 +12,8 @@ jobs:
   Build:
     runs-on: ubuntu-latest
     steps:
-      - run: ls
+      - run: git clone https://github.com/notAperson535/windows-11-vscode.git
+      - run: cd windows-11-vscode
       - run: npm install
       - run: npm install -g vsce
       - run: vsce package
