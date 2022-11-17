@@ -1,5 +1,8 @@
 # Changelog
 
+## 2.0.0
+Added themes, make terminal look nice, and added bgs, along with other fixes and changes.
+
 ## 1.1.6
 Fix sidebar elements (again)
 
