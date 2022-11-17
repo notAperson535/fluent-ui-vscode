@@ -181,3 +181,7 @@ body {
 .monaco-workbench .activitybar>.content :not(.monaco-menu)>.monaco-action-bar .action-item:hover {
     filter: invert(1) !important;
 }
+
+.part.panel.basepanel.bottom {
+    background: none !important;
+}
