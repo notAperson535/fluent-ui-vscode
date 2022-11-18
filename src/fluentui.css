@@ -14,10 +14,6 @@ body {
 
 .monaco-workbench {
     background: none !important;
-}
-
-.monaco-workbench {
-    background: var(--blurred-background) !important;
     backdrop-filter: blur(12px) saturate(1);
 }
 
