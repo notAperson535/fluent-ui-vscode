@@ -1,6 +1,7 @@
 # Windows 11 Theme for VSCode
 
 ### SPECIAL NOTE: If Visual Studio Code complains about that it is corrupted, simply click "More" and then click "Don't show again".
+
 ### NOTE: Every time after Visual Studio Code is updated, please re-enable Windows 11.
 
 Custom CSS to your Visual Studio Code. Based on [be5invis](https://github.com/be5invis)’s [vscode-customize-css](https://github.com/be5invis/vscode-custom-css).
@@ -11,14 +12,13 @@ Custom CSS to your Visual Studio Code. Based on [be5invis](https://github.com/be
 
 2. Restart Visual Studio Code with proper permission to modify itself:
 
-   1. **Windows**: Restart with Administrator Permission.
+    1. **Windows**: Restart with Administrator Permission.
 
-   2. **MacOS and Linux**: See instructions below.
+    2. **MacOS and Linux**: See instructions below.
 
 3 Open the command menu (ctrl+shift+p for Windows, command+shift+p for macOS), and then run `Enable Windows 11 for VSCode`.
 
 4. Restart VSCode.
-
 
 ## Enabling different themes
 
@@ -30,25 +30,26 @@ There are 5 theme options. light, dark, darkblue, green, and fuchsia. Here is ho
 "windows-11-vscode.theme": "dark"
 ```
 
-Fuchsia currently uses [this theme](https://marketplace.visualstudio.com/items?itemName=webfreak.cute-theme)
+Fuchsia currently uses The VSCode default light theme (Light+)
 
 ## Extension commands
 
-As you know to access the command palette and introduce commands you can use ***F1*** (all OSes), ***Ctrl+Shift+P*** (Windows & Linux) or ***Cmd+Shift+P*** (OS X).
+As you know to access the command palette and introduce commands you can use **_F1_** (all OSes), **_Ctrl+Shift+P_** (Windows & Linux) or **_Cmd+Shift+P_** (OS X).
 
-- ***Enable Windows 11 for VSCode***: Enables Windows 11 for VSCode.
-- ***Disable Windows 11 for VSCode***: Disables Windows 11 for VSCode.
-- ***Reload Windows 11 for VSCode***: Disables and then re-enables Windows 11 for VSCode.
+-   **_Enable Windows 11 for VSCode_**: Enables Windows 11 for VSCode.
+-   **_Disable Windows 11 for VSCode_**: Disables Windows 11 for VSCode.
+-   **_Reload Windows 11 for VSCode_**: Disables and then re-enables Windows 11 for VSCode.
 
 ## Windows users
 
 **In Windows, make sure you run your Visual Studio Code in Administrator mode before enabling or disabling your custom style!**
 
 ## Mac and Linux users
+
 **The extension would NOT work if Visual Studio Code cannot modify itself.** The cases include:
 
-- Code files being read-only, like on a read-only file system or,
-- Code is not started with the permissions to modify itself.
+-   Code files being read-only, like on a read-only file system or,
+-   Code is not started with the permissions to modify itself.
 
 **You need to claim ownership on Visual Studio Code's installation directory, by running this command**:
 
@@ -59,10 +60,10 @@ sudo chown -R $(whoami) /usr/share/code
 
 The placeholder `<Path to Visual Studio Code>` means the path to VSCode installation. It is typically:
 
-- `/Applications/Visual Studio Code.app/Contents/MacOS/Electron`, on MacOS;
-- `/Applications/Visual Studio Code - Insiders.app/Contents/MacOS/Electron`, on MacOS when using Insiders branch;
-- `/usr/share/code`, on most Linux;
-- `/usr/lib/code/` or `/opt/visual-studio-code` on Arch Linux.
+-   `/Applications/Visual Studio Code.app/Contents/MacOS/Electron`, on MacOS;
+-   `/Applications/Visual Studio Code - Insiders.app/Contents/MacOS/Electron`, on MacOS when using Insiders branch;
+-   `/usr/share/code`, on most Linux;
+-   `/usr/lib/code/` or `/opt/visual-studio-code` on Arch Linux.
 
 Mac and Linux package managers may have customized installation path. Please double check your path is correct.
 
@@ -71,7 +72,7 @@ Mac and Linux package managers may have customized installation path. Please dou
 This extension modifies some Visual Studio Code files so use it at your own risk.
 Currently, this is not supported by the extension functionality that Visual Studio Code provides so this extension solves this issue by injecting code into:
 
-- `electron-browser/index.html`.
+-   `electron-browser/index.html`.
 
 The extension will keep a copy of the original file in case something goes wrong. That's what the disable command will do for you.
 
