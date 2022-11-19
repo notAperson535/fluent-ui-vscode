@@ -1,0 +1,183 @@
+:root {
+    --outline: 2px solid #eaeaea;
+    --blurred-background: rgba(255, 255, 255, 0.5);
+    --shadow: 5px 5px 8px #d3d3d3;
+    --text-color: black;
+}
+
+body {
+    background-image: url("dummybgurl") !important;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.monaco-workbench {
+    background: rgba(255, 255, 255, 0.2) !important;
+    backdrop-filter: blur(12px) saturate(1);
+}
+
+@font-face {
+    font-family: 'Segoe UI Variable';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Segoe UI Variable'), url('https://fonts.cdnfonts.com/s/63254/SegoeUIVF.woff') format('woff');
+}
+
+* {
+    font-family: "Segoe UI Variable", Consolas, "Courier New", monospace;
+}
+
+.monaco-workbench .part.titlebar {
+    background: none !important;
+}
+
+.part.activitybar {
+    background: none !important;
+}
+
+.monaco-workbench .activitybar>.content :not(.monaco-menu)>.monaco-action-bar .action-label {
+    color: gray !important;
+}
+
+.action-item icon.checked:hover {
+    color: var(--text-color) !important;
+}
+
+.part.sidebar.left {
+    height: calc(100% - 20px);
+    margin-top: 10px;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    background-color: var(--blurred-background) !important;
+    backdrop-filter: blur(12px) saturate(1);
+    border: var(--outline);
+    margin-left: 5px;
+    margin-right: 10px;
+}
+
+.monaco-button {
+    border-radius: 4px;
+}
+
+.codicon-extensions-manage:before {
+    content: '\ea7c' !important;
+    font-family: 'codicon' !important;
+}
+
+.monaco-workbench .part>.content {
+    background: none !important;
+}
+
+.monaco-workbench .part.editor>.content .editor-group-container>.title {
+    background: none !important;
+}
+
+.tabs-container {
+    margin-left: 8px
+}
+
+.tab {
+    border-radius: 8px 8px 0px 0px;
+    outline: var(--outline);
+    margin: 0px 2px;
+    margin-top: 2px;
+    height: 33px !important;
+    border-right: none !important;
+    background: var(--blurred-background) !important;
+    backdrop-filter: blur(12px) saturate(1);
+}
+
+.tab[aria-selected="false"] {
+    background: none !important;
+    outline: none !important;
+    backdrop-filter: none;
+}
+
+.tabs-breadcrumbs {
+    border-radius: 8px 0px 0px 0px;
+    overflow: hidden;
+}
+
+.monaco-breadcrumbs {
+    background: var(--blurred-background) !important;
+    backdrop-filter: blur(12px) saturate(1);
+}
+
+.editor-container {
+    background: var(--blurred-background) !important;
+    backdrop-filter: blur(12px) saturate(1);
+}
+
+.monaco-editor,
+.monaco-editor .margin,
+.lines-content monaco-editor-background,
+.monaco-editor-background {
+    background: none !important;
+}
+
+.monaco-workbench .pane>.pane-body .welcome-view-content {
+    padding: 0 40px 1em 20px;
+}
+
+.composite.viewlet {
+    width: calc(100% - 19px);
+}
+
+.part.sidebar>.title>.title-label h2 {
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--text-color) !important;
+}
+
+.quick-input-widget {
+    background-color: var(--blurred-background) !important;
+    backdrop-filter: blur(12px) saturate(1);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.monaco-list-rows {
+    background: none !important;
+}
+
+.monaco-findInput .monaco-inputbox {
+    border-radius: 4px !important;
+    overflow: hidden;
+}
+
+.monaco-editor .find-widget.visible {
+    background-color: var(--blurred-background) !important;
+    backdrop-filter: blur(12px) saturate(1);
+    border-radius: 8px;
+}
+
+.context-view {
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    background-color: var(--blurred-background) !important;
+    backdrop-filter: blur(12px) saturate(1);
+}
+
+.context-view div {
+    background: none !important;
+}
+
+.notifications-list-container {
+    background-color: var(--blurred-background) !important;
+    backdrop-filter: blur(12px) saturate(1);
+}
+
+.notification-toast.notification-fade-in-done {
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.monaco-workbench .activitybar>.content :not(.monaco-menu)>.monaco-action-bar .action-item:hover {
+    filter: invert(1) !important;
+}
+
+.part.panel.basepanel.bottom {
+    background: none !important;
+}

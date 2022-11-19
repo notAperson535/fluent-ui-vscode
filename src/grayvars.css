@@ -5,6 +5,10 @@
     --text-color: white;
 }
 
+.monaco-workbench {
+    background: rgba(95, 95, 95, 0.2) !important;
+}
+
 .monaco-workbench .activitybar>.content :not(.monaco-menu)>.monaco-action-bar .action-item:hover {
     filter: invert(0) !important;
 }

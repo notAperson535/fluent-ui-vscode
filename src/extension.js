@@ -5,6 +5,9 @@ const msg = require("./messages").messages;
 const uuid = require("uuid");
 const fetch = require("node-fetch");
 const Url = require("url");
+const wallpaper = require('wallpaper')
+var replace = require("replace");
+const messages = require("./messages").messages;
 
 function activate(context) {
 	const appDir = path.dirname(require.main.filename);
@@ -98,29 +101,52 @@ function activate(context) {
 		}
 	}
 
+	// Wallpaper
+
+	async function getBase64Image() {
+		try {
+			const wallPath = await wallpaper.get();
+			const img = await fs.readFile(wallPath, 'base64');
+
+			return `data:image/png;base64,${img}`;
+		} catch (e) {
+			vscode.window.showInformationMessage(messages.admin);
+			throw e;
+		}
+	}
+
 	// #### Patching ##############################################################
 
 	async function performPatch(uuidSession) {
 		let config = ""
+		const bgImage = await getBase64Image();
+
+		replace({
+			regex: "dummybgurl",
+			replacement: bgImage,
+			paths: ['windows11vscode.css'],
+			recursive: true,
+			silent: true,
+		});
 
 		const colortheme = vscode.workspace.getConfiguration().get("windows-11-vscode.theme");
 		if (colortheme == "dark") {
-			config = ["file:///" + (path.join(__dirname, "/fluentui.css")).replaceAll("\\", "/"), "file:///" + (path.join(__dirname, "/darkmodevars.css")).replaceAll("\\", "/")]
+			config = ["file:///" + (path.join(__dirname, "/windows11vscode.css")).replaceAll("\\", "/"), "file:///" + (path.join(__dirname, "/darkmodevars.css")).replaceAll("\\", "/")]
 		}
 		else if (colortheme == "darkblue") {
-			config = ["file:///" + (path.join(__dirname, "/fluentui.css")).replaceAll("\\", "/"), "file:///" + (path.join(__dirname, "/darkbluevars.css")).replaceAll("\\", "/")]
+			config = ["file:///" + (path.join(__dirname, "/windows11vscode.css")).replaceAll("\\", "/"), "file:///" + (path.join(__dirname, "/darkbluevars.css")).replaceAll("\\", "/")]
 		}
 		else if (colortheme == "gray") {
-			config = ["file:///" + (path.join(__dirname, "/fluentui.css")).replaceAll("\\", "/"), "file:///" + (path.join(__dirname, "/grayvars.css")).replaceAll("\\", "/")]
+			config = ["file:///" + (path.join(__dirname, "/windows11vscode.css")).replaceAll("\\", "/"), "file:///" + (path.join(__dirname, "/grayvars.css")).replaceAll("\\", "/")]
 		}
 		else if (colortheme == "green") {
-			config = ["file:///" + (path.join(__dirname, "/fluentui.css")).replaceAll("\\", "/"), "file:///" + (path.join(__dirname, "/greenvars.css")).replaceAll("\\", "/")]
+			config = ["file:///" + (path.join(__dirname, "/windows11vscode.css")).replaceAll("\\", "/"), "file:///" + (path.join(__dirname, "/greenvars.css")).replaceAll("\\", "/")]
 		}
 		else if (colortheme == "fuchsia") {
-			config = ["file:///" + (path.join(__dirname, "/fluentui.css")).replaceAll("\\", "/"), "file:///" + (path.join(__dirname, "/fuchsiavars.css")).replaceAll("\\", "/")]
+			config = ["file:///" + (path.join(__dirname, "/windows11vscode.css")).replaceAll("\\", "/"), "file:///" + (path.join(__dirname, "/fuchsiavars.css")).replaceAll("\\", "/")]
 		}
 		else {
-			config = ["file:///" + (path.join(__dirname, "/fluentui.css")).replaceAll("\\", "/")]
+			config = ["file:///" + (path.join(__dirname, "/windows11vscode.css")).replaceAll("\\", "/")]
 		}
 
 		vscode.window.showInformationMessage(config)

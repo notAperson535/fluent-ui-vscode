@@ -1,17 +1,16 @@
 :root {
     --outline: 2px solid rgba(242, 126, 198);
-    --blurred-background: rgba(255, 166, 201, 0.5);
+    --blurred-background: rgba(95, 95, 95, 0.5);
     --shadow: 5px 5px 8px #df72e9;
     --text-color: black;
 }
 
+.monaco-workbench {
+    background: rgba(95, 95, 95, 0.2) !important;
+}
 
 .monaco-workbench .activitybar>.content :not(.monaco-menu)>.monaco-action-bar .action-item:hover {
     filter: invert(0) !important;
-}
-
-body {
-    background-image: url("https://raw.githubusercontent.com/notAperson535/windows-11-vscode/master/images/fuchsiabg.jpg") !important;
 }
 
 .editor-group-letterpress {
@@ -30,7 +29,9 @@ a.label-name {
     color: #6e6e6e !important;
 }
 
-.name, .ellipsis, .suggest-input-container {
+.name,
+.ellipsis,
+.suggest-input-container {
     color: #3f3f3f !important;
 }
 
@@ -39,11 +40,13 @@ a.label-name {
     border-radius: 5px !important;
 }
 
-::before, .menu-bar-menu-title, .window-title,
+::before,
+.menu-bar-menu-title,
+.window-title,
 .activity-workbench-view-extension-liveshare-7853dbf2d43be293da8e0881a8ce8673d6237243 {
     color: purple;
 }
 
-.activity-workbench-view-extension-liveshare-7853dbf2d43be293da8e0881a8ce8673d6237243{
+.activity-workbench-view-extension-liveshare-7853dbf2d43be293da8e0881a8ce8673d6237243 {
     background-color: purple !important;
 }

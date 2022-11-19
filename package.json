@@ -66,12 +66,16 @@
 	"dependencies": {
 		"file-url": "^3.0.0",
 		"node-fetch": "^2.0.0",
-		"uuid": "^8.3.2"
+		"replace": "^1.2.2",
+		"uuid": "^8.3.2",
+		"wallpaper": "^6.1.1",
+		"wallpaper-cli": "^3.1.0"
 	},
 	"extensionKind": [
 		"ui"
 	],
 	"scripts": {
+		"test": "wallpaper get",
 		"vscode:prepublish": "npx -y rimraf node_modules && npm install --prod"
 	}
 }
