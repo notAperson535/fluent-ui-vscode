@@ -5,7 +5,7 @@ const msg = require("./messages").messages;
 const uuid = require("uuid");
 const fetch = require("node-fetch");
 const Url = require("url");
-const wallpaper = require('wallpaper')
+const wallpaper = require('wallpaper');
 var replace = require("replace");
 const messages = require("./messages").messages;
 
