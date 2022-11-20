@@ -104,32 +104,25 @@ function activate(context) {
 
 	// Wallpaper
 
-	// function to encode file data to base64 encoded string
-	function base64_encode(file) {
-		// read binary data
-		var bitmap = fs.readFileSync(file);
-		// convert binary data to base64 encoded string
-		return new Buffer(bitmap).toString('base64');
-	}
-
 	async function getBase64Image() {
 		try {
 			const wallPath = await wallpaper.get();
 
 
 			if (wallPath) {
-				// const img = await sharp(wallPath).toBuffer()
+				const img = await sharp(wallPath).toBuffer()
 
-				// console.log(img);
+				var base64str = "data:image/png;base64," + img.toString('base64');
 
-				// return "data:image/png;base64," + img.toString('base64');
+				console.log(base64str)
 
-				vscode.window.showInformationMessage(wallPath)
-
-
-				var base64str = await base64_encode(wallPath);
-
-				return base64str;
+				replace({
+					regex: "dummybgurl",
+					replacement: base64str,
+					paths: [path.join(__dirname, "/windows11vscode.css")],
+					recursive: true,
+					silent: true,
+				});
 			}
 
 			return false;
@@ -143,15 +136,7 @@ function activate(context) {
 
 	async function performPatch(uuidSession) {
 		let config = [""]
-		const bgImage = await getBase64Image();
-
-		replace({
-			regex: "dummybgurl",
-			replacement: bgImage,
-			paths: [path.join(__dirname, "/windows11vscode.css")],
-			recursive: true,
-			silent: true,
-		});
+		getBase64Image();
 
 		const colortheme = vscode.workspace.getConfiguration().get("windows-11-vscode.theme");
 		if (colortheme == "dark") {
