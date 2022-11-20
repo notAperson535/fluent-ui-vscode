@@ -6,7 +6,7 @@
 }
 
 body {
-    background-image: url("dummybgurl") !important;
+    background-image: url("data:image/png;base64") !important;
     background-position: 50%;
     background-repeat: no-repeat;
     background-size: cover;

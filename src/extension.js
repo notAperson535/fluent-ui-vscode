@@ -3,11 +3,12 @@ const fs = require("fs");
 const path = require("path");
 const msg = require("./messages").messages;
 const uuid = require("uuid");
-const fetch = require("node-fetch");
+const fetchfetch = require("node-fetch");
 const Url = require("url");
-const wallpaper = require('wallpaper');
+const wallpaper = require("wallpaper");
 var replace = require("replace");
 const messages = require("./messages").messages;
+const sharp = require("sharp");
 
 function activate(context) {
 	const appDir = path.dirname(require.main.filename);
@@ -21,7 +22,7 @@ function activate(context) {
 			const fp = Url.fileURLToPath(url);
 			return await fs.promises.readFile(fp);
 		} else {
-			const response = await fetch(url);
+			const response = await fetchfetch(url);
 			return response.buffer();
 		}
 	}
@@ -103,12 +104,35 @@ function activate(context) {
 
 	// Wallpaper
 
+	// function to encode file data to base64 encoded string
+	function base64_encode(file) {
+		// read binary data
+		var bitmap = fs.readFileSync(file);
+		// convert binary data to base64 encoded string
+		return new Buffer(bitmap).toString('base64');
+	}
+
 	async function getBase64Image() {
 		try {
 			const wallPath = await wallpaper.get();
-			const img = await fs.readFile(wallPath, 'base64');
 
-			return `data:image/png;base64,${img}`;
+
+			if (wallPath) {
+				// const img = await sharp(wallPath).toBuffer()
+
+				// console.log(img);
+
+				// return "data:image/png;base64," + img.toString('base64');
+
+				vscode.window.showInformationMessage(wallPath)
+
+
+				var base64str = await base64_encode(wallPath);
+
+				return base64str;
+			}
+
+			return false;
 		} catch (e) {
 			vscode.window.showInformationMessage(messages.admin);
 			throw e;
@@ -118,13 +142,13 @@ function activate(context) {
 	// #### Patching ##############################################################
 
 	async function performPatch(uuidSession) {
-		let config = ""
+		let config = [""]
 		const bgImage = await getBase64Image();
 
 		replace({
 			regex: "dummybgurl",
 			replacement: bgImage,
-			paths: ['windows11vscode.css'],
+			paths: [path.join(__dirname, "/windows11vscode.css")],
 			recursive: true,
 			silent: true,
 		});
@@ -158,7 +182,6 @@ function activate(context) {
 		html = html.replace(/<meta.*http-equiv="Content-Security-Policy".*>/, "");
 
 		let indicatorJS = "";
-		if (config.statusbar) indicatorJS = await getIndicatorJs();
 
 		html = html.replace(
 			/(<\/html>)/,
@@ -220,17 +243,6 @@ function activate(context) {
 			return "";
 		}
 	}
-	async function getIndicatorJs() {
-		let indicatorJsPath;
-		let ext = vscode.extensions.getExtension("be5invis.vscode-custom-css");
-		if (ext && ext.extensionPath) {
-			indicatorJsPath = path.resolve(ext.extensionPath, "src/statusbar.js");
-		} else {
-			indicatorJsPath = path.resolve(__dirname, "statusbar.js");
-		}
-		const indicatorJsContent = await fs.promises.readFile(indicatorJsPath, "utf-8");
-		return `<script>${indicatorJsContent}</script>`;
-	}
 
 	function reloadWindow() {
 		// reload vscode-window
@@ -264,9 +276,9 @@ function activate(context) {
 	context.subscriptions.push(uninstallWindows11VSCode);
 	context.subscriptions.push(reloadWindows11VSCode);
 
-	console.log("vscode-custom-css is active!");
-	console.log("Application directory", appDir);
-	console.log("Main HTML file", htmlFile);
+	console.log("windows-11-vscode is active!");
+	console.log("Application directory:", appDir);
+	console.log("Main HTML file:", htmlFile);
 }
 exports.activate = activate;
 
