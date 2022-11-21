@@ -6,7 +6,7 @@
 }
 
 body {
-    background-image: url("dummybgurl") !important;
+    background: url("dummybgurl");
     background-position: 50%;
     background-repeat: no-repeat;
     background-size: cover;
@@ -24,7 +24,7 @@ body {
     src: local('Segoe UI Variable'), url('https://fonts.cdnfonts.com/s/63254/SegoeUIVF.woff') format('woff');
 }
 
-* {
+.windows {
     font-family: "Segoe UI Variable", Consolas, "Courier New", monospace;
 }
 

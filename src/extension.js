@@ -6,7 +6,6 @@ const uuid = require("uuid");
 const fetchfetch = require("node-fetch");
 const Url = require("url");
 const wallpaper = require("wallpaper");
-var replace = require("replace");
 const messages = require("./messages").messages;
 const sharp = require("sharp");
 
@@ -104,64 +103,62 @@ function activate(context) {
 
 	// Wallpaper
 
+	var base64img = ""
+
 	async function getDesktopBackground() {
-		try {
-			const wallPath = await wallpaper.get();
+		const wallPath = await wallpaper.get();
 
+		const img = await sharp(wallPath).toBuffer()
 
-			if (wallPath) {
-				const img = await sharp(wallPath).toBuffer()
-
-				var base64str = "data:image/png;base64," + img.toString('base64');
-
-				replace({
-					regex: "dummybgurl",
-					replacement: base64str,
-					paths: [path.join(__dirname, "/windows11vscode.css")],
-					recursive: true,
-					silent: true,
-				});
-			}
-
-			return false;
-		} catch (e) {
-			vscode.window.showInformationMessage(messages.admin);
-			throw e;
-		}
+		base64img = "data:image/png;base64," + img.toString('base64');
 	}
 
 	// #### Patching ##############################################################
 
 	async function performPatch(uuidSession) {
-		let config = [""]
-		getDesktopBackground();
+		let config = vscode.workspace.getConfiguration("windows-11-vscode")
+		let cssfiles = [""]
 
-		const colortheme = vscode.workspace.getConfiguration().get("windows-11-vscode.theme");
-		if (colortheme == "dark") {
-			config = ["file:///" + (path.join(__dirname, "/windows11vscode.css")).replaceAll("\\", "/"), "file:///" + (path.join(__dirname, "/darkmodevars.css")).replaceAll("\\", "/")]
-		}
-		else if (colortheme == "darkblue") {
-			config = ["file:///" + (path.join(__dirname, "/windows11vscode.css")).replaceAll("\\", "/"), "file:///" + (path.join(__dirname, "/darkbluevars.css")).replaceAll("\\", "/")]
-		}
-		else if (colortheme == "gray") {
-			config = ["file:///" + (path.join(__dirname, "/windows11vscode.css")).replaceAll("\\", "/"), "file:///" + (path.join(__dirname, "/grayvars.css")).replaceAll("\\", "/")]
-		}
-		else if (colortheme == "green") {
-			config = ["file:///" + (path.join(__dirname, "/windows11vscode.css")).replaceAll("\\", "/"), "file:///" + (path.join(__dirname, "/greenvars.css")).replaceAll("\\", "/")]
-		}
-		else if (colortheme == "fuchsia") {
-			config = ["file:///" + (path.join(__dirname, "/windows11vscode.css")).replaceAll("\\", "/"), "file:///" + (path.join(__dirname, "/fuchsiavars.css")).replaceAll("\\", "/")]
+		const backgroundonoroff = config.get("enableBackground")
+		if (backgroundonoroff == "false") {
+			void 0;
 		}
 		else {
-			config = ["file:///" + (path.join(__dirname, "/windows11vscode.css")).replaceAll("\\", "/")]
+			await getDesktopBackground();
 		}
 
-		vscode.window.showInformationMessage(config)
+		const colortheme = config.get("theme");
+
+		let windows11vscodeCSS = "file:///" + (path.join(__dirname, "/windows11vscode.css")).replaceAll("\\", "/")
+		let darkvars = "file:///" + (path.join(__dirname, "/darkmodevars.css")).replaceAll("\\", "/")
+		let darkbluevars = "file:///" + (path.join(__dirname, "/darkbluevars.css")).replaceAll("\\", "/")
+		let grayvars = "file:///" + (path.join(__dirname, "/grayvars.css")).replaceAll("\\", "/")
+		let greenvars = "file:///" + (path.join(__dirname, "/greenvars.css")).replaceAll("\\", "/")
+		let fuchsiavars = "file:///" + (path.join(__dirname, "/fuchsiavars.css")).replaceAll("\\", "/")
+
+		if (colortheme == "dark") {
+			cssfiles = [windows11vscodeCSS, darkvars]
+		}
+		else if (colortheme == "darkblue") {
+			cssfiles = [windows11vscodeCSS, darkbluevars]
+		}
+		else if (colortheme == "gray") {
+			cssfiles = [windows11vscodeCSS, grayvars]
+		}
+		else if (colortheme == "green") {
+			cssfiles = [windows11vscodeCSS, greenvars]
+		}
+		else if (colortheme == "fuchsia") {
+			cssfiles = [windows11vscodeCSS, fuchsiavars]
+		}
+		else {
+			cssfiles = [windows11vscodeCSS]
+		}
 
 		let html = await fs.promises.readFile(htmlFile, "utf-8");
 		html = clearExistingPatches(html);
 
-		const injectHTML = await patchHtml(config);
+		const injectHTML = await patchHtml(cssfiles);
 		html = html.replace(/<meta.*http-equiv="Content-Security-Policy".*>/, "");
 
 		let indicatorJS = "";
@@ -191,13 +188,9 @@ function activate(context) {
 		return html;
 	}
 
-	function patchIsProperlyConfigured(config) {
-		return config && config.imports && config.imports instanceof Array;
-	}
-
-	async function patchHtml(config) {
+	async function patchHtml(cssfiles) {
 		let res = "";
-		for (const item of config) {
+		for (const item of cssfiles) {
 			const imp = await patchHtmlForItem(item);
 			if (imp) res += imp;
 		}
@@ -212,7 +205,7 @@ function activate(context) {
 		const ext = path.extname(parsed.pathname);
 
 		try {
-			const fetched = await getContent(url);
+			const fetched = await getContent(url.replace("dummybgurl", base64img));
 			if (ext === ".css") {
 				return `<style>${fetched}</style>`;
 			} else if (ext === ".js") {
