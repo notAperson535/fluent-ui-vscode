@@ -104,7 +104,7 @@ function activate(context) {
 
 	// Wallpaper
 
-	async function getBase64Image() {
+	async function getDesktopBackground() {
 		try {
 			const wallPath = await wallpaper.get();
 
@@ -113,8 +113,6 @@ function activate(context) {
 				const img = await sharp(wallPath).toBuffer()
 
 				var base64str = "data:image/png;base64," + img.toString('base64');
-
-				console.log(base64str)
 
 				replace({
 					regex: "dummybgurl",
@@ -136,7 +134,7 @@ function activate(context) {
 
 	async function performPatch(uuidSession) {
 		let config = [""]
-		getBase64Image();
+		getDesktopBackground();
 
 		const colortheme = vscode.workspace.getConfiguration().get("windows-11-vscode.theme");
 		if (colortheme == "dark") {

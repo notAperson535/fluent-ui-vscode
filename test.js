@@ -22,14 +22,13 @@ async function thing() {
 
     img = await go()
 
+    fs.writeFile('helloworld.txt', img, function (err) {
+        if (err) return;
+        console.log('Hello World > helloworld.txt');
+    });
+
 }
 
 thing();
 
 console.log(img)
-
-
-fs.writeFile('helloworld.txt', img, function (err) {
-    if (err) return;
-    console.log('Hello World > helloworld.txt');
-});
