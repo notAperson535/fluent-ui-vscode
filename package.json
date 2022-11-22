@@ -60,7 +60,6 @@
 		}
 	},
 	"devDependencies": {
-		"@types/node": "^18.11.9",
 		"eslint": "^8.21.0",
 		"eslint-config-prettier": "^8.5.0"
 	},
@@ -68,6 +67,7 @@
 		"file-url": "^3.0.0",
 		"node-fetch": "^2.0.0",
 		"replace": "^1.2.2",
+		"sharp": "^0.31.1",
 		"uuid": "^8.3.2",
 		"wallpaper": "^5.0.1"
 	},
