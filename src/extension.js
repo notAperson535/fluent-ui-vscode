@@ -103,7 +103,7 @@ function activate(context) {
 
 	// Wallpaper
 
-	var base64img = ""
+	var base64img = "yeeeeeeeeeeeeeee"
 
 	async function getDesktopBackground() {
 		const wallPath = await wallpaper.get();
@@ -205,7 +205,8 @@ function activate(context) {
 		const ext = path.extname(parsed.pathname);
 
 		try {
-			const fetched = await getContent(url.replace("dummybgurl", base64img));
+			const fetched = await getContent(url);
+			fetched = fetched.replace("dummybgurl", base64img)
 			if (ext === ".css") {
 				return `<style>${fetched}</style>`;
 			} else if (ext === ".js") {
