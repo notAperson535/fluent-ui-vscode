@@ -25,7 +25,7 @@ body {
 }
 
 .windows {
-    font-family: "Segoe UI Variable", Consolas, "Courier New", monospace;
+    font-family: "Segoe UI Variable", Consolas, "Courier New", monospace !important;
 }
 
 .monaco-workbench .part.titlebar {
@@ -125,8 +125,8 @@ body {
 }
 
 .part.sidebar>.title>.title-label h2 {
-    font-size: 17px;
-    font-weight: 600;
+    font-size: 17px !important;
+    font-weight: 600 !important;
     color: var(--text-color) !important;
 }
 
