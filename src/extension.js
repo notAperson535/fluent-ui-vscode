@@ -6,6 +6,7 @@ const uuid = require("uuid");
 const fetchfetch = require("node-fetch");
 const Url = require("url");
 const wallpaper = require("wallpaper");
+var replace = require("replace");
 const messages = require("./messages").messages;
 const sharp = require("sharp");
 
@@ -16,10 +17,26 @@ function activate(context) {
 	const BackupFilePath = uuid =>
 		path.join(base, "electron-sandbox", "workbench", `workbench.${uuid}.bak-custom-css`);
 
+	// Wallpaper
+
+	var base64img = ""
+
+	async function getDesktopBackground() {
+		const wallPath = await wallpaper.get();
+
+		const img = await sharp(wallPath).toBuffer()
+
+		base64img = "data:image/png;base64," + img.toString('base64');
+	}
+
 	async function getContent(url) {
 		if (/^file:/.test(url)) {
 			const fp = Url.fileURLToPath(url);
-			return await fs.promises.readFile(fp);
+			var output = await fs.promises.readFile(fp);
+			output = output.toString();
+			output = output.replace("dummybgurl", base64img);
+			output = Buffer.from(output);
+			return await output;
 		} else {
 			const response = await fetchfetch(url);
 			return response.buffer();
@@ -101,18 +118,6 @@ function activate(context) {
 		}
 	}
 
-	// Wallpaper
-
-	var base64img = "yeeeeeeeeeeeeeee"
-
-	async function getDesktopBackground() {
-		const wallPath = await wallpaper.get();
-
-		const img = await sharp(wallPath).toBuffer()
-
-		base64img = "data:image/png;base64," + img.toString('base64');
-	}
-
 	// #### Patching ##############################################################
 
 	async function performPatch(uuidSession) {
@@ -164,12 +169,12 @@ function activate(context) {
 		let indicatorJS = "";
 
 		html = html.replace(
-			/(<\/html>)/,
+			/(<\/head>)/,
 			`<!-- !! VSCODE-CUSTOM-CSS-SESSION-ID ${uuidSession} !! -->\n` +
 			"<!-- !! VSCODE-CUSTOM-CSS-START !! -->\n" +
 			indicatorJS +
 			injectHTML +
-			"<!-- !! VSCODE-CUSTOM-CSS-END !! -->\n</html>"
+			"<!-- !! VSCODE-CUSTOM-CSS-END !! -->\n</head>"
 		);
 		try {
 			await fs.promises.writeFile(htmlFile, html, "utf-8");
@@ -196,6 +201,7 @@ function activate(context) {
 		}
 		return res;
 	}
+
 	async function patchHtmlForItem(url) {
 		if (!url) return "";
 		if (typeof url !== "string") return "";
@@ -204,20 +210,13 @@ function activate(context) {
 		let parsed = new Url.URL(url);
 		const ext = path.extname(parsed.pathname);
 
-		try {
-			const fetched = await getContent(url);
-			fetched = fetched.replace("dummybgurl", base64img)
-			if (ext === ".css") {
-				return `<style>${fetched}</style>`;
-			} else if (ext === ".js") {
-				return `<script>${fetched}</script>`;
-			} else {
-				console.log(`Unsupported extension type: ${ext}`);
-			}
-		} catch (e) {
-			console.error(e);
-			vscode.window.showWarningMessage(msg.cannotLoad(url));
-			return "";
+		const fetched = await getContent(url);
+		if (ext === ".css") {
+			return `<style>${fetched}</style>`;
+		} else if (ext === ".js") {
+			return `<script>${fetched}</script>`;
+		} else {
+			console.log(`Unsupported extension type: ${ext}`);
 		}
 	}
 
