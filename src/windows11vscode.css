@@ -28,6 +28,10 @@ body {
     font-family: "Segoe UI Variable", Consolas, "Courier New", monospace !important;
 }
 
+.mac {
+    font-family: "Segoe UI Variable", Consolas, "Courier New", monospace !important;
+}
+
 .monaco-workbench .part.titlebar {
     background: none !important;
 }
