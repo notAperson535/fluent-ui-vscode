@@ -125,7 +125,7 @@ function activate(context) {
 		let cssfiles = [""]
 
 		const backgroundonoroff = config.get("enableBackground")
-		if (backgroundonoroff == "false") {
+		if (backgroundonoroff == false) {
 			void 0;
 		}
 		else {
