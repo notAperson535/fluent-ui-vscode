@@ -20,13 +20,23 @@ Custom CSS to your Visual Studio Code. Based on [be5invis](https://github.com/be
 
 4. Restart VSCode.
 
+## Background sampling
+
+(To be completed)
+
+If you are not using windows with this theme, make sure to disable background sampling like so:
+
+```json
+"windows-11-vscode.enableBackground": false
+```
+
 ## Enabling different themes
 
 If you would like to use dark mode, just add this setting in the user settings json file for VSCode
 
 There are 5 theme options. light, dark, darkblue, green, and fuchsia. Here is how you would enable one.
 
-```
+```json
 "windows-11-vscode.theme": "dark"
 ```
 
