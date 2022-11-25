@@ -55,6 +55,11 @@
 					"description": "Windows 11 for VSCode theme",
 					"type": "string",
 					"default": "light"
+				},
+				"windows-11-vscode.enableBackground": {
+					"description": "Enable desktop background grabbing for Windows 11 for VSCode",
+					"type": "boolean",
+					"default": true
 				}
 			}
 		}
