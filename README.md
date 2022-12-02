@@ -4,7 +4,7 @@
 
 ### NOTE: Every time after Visual Studio Code is updated, please re-enable Windows 11.
 
-Custom CSS to your Visual Studio Code. Based on [be5invis](https://github.com/be5invis)’s [vscode-customize-css](https://github.com/be5invis/vscode-custom-css).
+A Windows 11 theme for VSCode. Based on [be5invis](https://github.com/be5invis)’s [vscode-customize-css](https://github.com/be5invis/vscode-custom-css).
 
 ## Getting Started
 
