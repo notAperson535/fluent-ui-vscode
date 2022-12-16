@@ -1,6 +1,6 @@
 :root {
-    --outline: 2px solid #eaeaea;
-    --blurred-background: rgba(255, 255, 255, 0.5);
+    --outline: 2px solid rgb(245, 245, 245);
+    --blurred-background: rgba(251, 251, 251, 0.5);
     --shadow: 5px 5px 8px #d3d3d3;
     --text-color: black;
 }
@@ -13,8 +13,7 @@ body {
 }
 
 .monaco-workbench {
-    background: var(--blurred-background) !important;
-    backdrop-filter: blur(12px) saturate(1);
+    background: rgba(243, 243, 243, 0.8) !important;
 }
 
 @font-face {

@@ -24,7 +24,7 @@ function activate(context) {
 	async function getDesktopBackground() {
 		const wallPath = await wallpaper.get();
 
-		const img = await sharp(wallPath).toBuffer()
+		const img = await sharp(wallPath).blur(100).toBuffer()
 
 		base64img = "data:image/png;base64," + img.toString('base64');
 	}
