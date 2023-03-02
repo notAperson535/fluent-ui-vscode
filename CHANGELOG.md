@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.0.1
+
+Fixed font breaking everything in the vscode editor
+
 ## 2.0.0
 
 Added themes, and added bgs, along with other fixes and changes.

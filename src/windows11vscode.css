@@ -3,6 +3,11 @@
     --blurred-background: rgba(251, 251, 251, 0.5);
     --shadow: 5px 5px 8px #d3d3d3;
     --text-color: black;
+    --font-regular: "Segoe UI Variable",
+        Segoe WPC,
+        Segoe UI,
+        sans-serif;
+    --font-semibold: "Segoe UI Variable Semibold", Segoe WPC, Segoe UI, sans-serif;
 }
 
 body {
@@ -23,12 +28,31 @@ body {
     src: local('Segoe UI Variable'), url('https://fonts.cdnfonts.com/s/63254/SegoeUIVF.woff') format('woff');
 }
 
-.windows {
-    font-family: "Segoe UI Variable", Consolas, "Courier New", monospace !important;
+@font-face {
+    font-family: 'Segoe UI Variable Semibold';
+    font-style: normal;
+    font-weight: 600;
+    src: local('Segoe UI Variable'), url('https://fonts.cdnfonts.com/s/63254/SegoeUIVF.woff') format('woff');
 }
 
-.mac {
-    font-family: "Segoe UI Variable", Consolas, "Courier New", monospace !important;
+/* Fonts */
+
+:host-context(.windows),
+.windows {
+    font-family: var(--font-regular) !important;
+}
+
+.tabs-container>.tab .tab-label a,
+.monaco-workbench .part.editor>.content .editor-group-container>.title .title-label a {
+    font-family: var(--font-semibold) !important;
+}
+
+.monaco-workbench .part.panel>.composite.title>.panel-switcher-container>.monaco-action-bar .action-item>.action-label {
+    font-family: var(--font-semibold) !important;
+}
+
+.sidebar>.title>.title-label h2 {
+    font-family: var(--font-semibold) !important;
 }
 
 .monaco-workbench .part.titlebar {
