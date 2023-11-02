@@ -3,7 +3,7 @@ const fs = require("fs");
 const path = require("path");
 const msg = require("./messages").messages;
 const uuid = require("uuid");
-const fetchfetch = require("node-fetch");
+const fetch = require("node-fetch");
 const Url = require("url");
 const wallpaper = require("wallpaper");
 var replace = require("replace");
@@ -32,13 +32,9 @@ function activate(context) {
 	async function getContent(url) {
 		if (/^file:/.test(url)) {
 			const fp = Url.fileURLToPath(url);
-			var output = await fs.promises.readFile(fp);
-			output = output.toString();
-			output = output.replace("dummybgurl", base64img);
-			output = Buffer.from(output);
-			return await output;
+			return await fs.promises.readFile(fp);
 		} else {
-			const response = await fetchfetch(url);
+			const response = await fetch(url);
 			return response.buffer();
 		}
 	}
@@ -171,10 +167,10 @@ function activate(context) {
 		html = html.replace(
 			/(<\/head>)/,
 			`<!-- !! VSCODE-CUSTOM-CSS-SESSION-ID ${uuidSession} !! -->\n` +
-			"<!-- !! VSCODE-CUSTOM-CSS-START !! -->\n" +
-			indicatorJS +
-			injectHTML +
-			"<!-- !! VSCODE-CUSTOM-CSS-END !! -->\n</head>"
+				"<!-- !! VSCODE-CUSTOM-CSS-START !! -->\n" +
+				indicatorJS +
+				injectHTML +
+				"<!-- !! VSCODE-CUSTOM-CSS-END !! -->\n</html>"
 		);
 		try {
 			await fs.promises.writeFile(htmlFile, html, "utf-8");
@@ -259,5 +255,5 @@ function activate(context) {
 exports.activate = activate;
 
 // this method is called when your extension is deactivated
-function deactivate() { }
+function deactivate() {}
 exports.deactivate = deactivate;
