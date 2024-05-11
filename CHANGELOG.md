@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.1.0
+
+Fixed extension not working, made background sampling off by default to avoid issues
+
 ## 2.0.1
 
 Fixed font breaking everything in the vscode editor
