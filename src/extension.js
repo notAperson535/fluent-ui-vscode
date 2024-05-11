@@ -2,7 +2,6 @@ const vscode = require("vscode");
 const fs = require("fs");
 const path = require("path");
 const msg = require("./messages").messages;
-// const uuid = require("uuid");
 const { v4: uuidv4 } = require('uuid');
 const fetch = require("node-fetch");
 const Url = require("url");
@@ -122,10 +121,7 @@ function activate(context) {
 		let cssfiles = [""]
 
 		const backgroundonoroff = config.get("enableBackground")
-		if (backgroundonoroff == false) {
-			void 0;
-		}
-		else {
+		if (backgroundonoroff == true) {
 			await getDesktopBackground();
 		}
 
@@ -162,6 +158,7 @@ function activate(context) {
 
 		const injectHTML = await patchHtml(cssfiles);
 		html = html.replace(/<meta.*http-equiv="Content-Security-Policy".*>/, "");
+		console.log(html)
 
 		let indicatorJS = "";
 
@@ -174,6 +171,7 @@ function activate(context) {
 			"<!-- !! VSCODE-CUSTOM-CSS-END !! -->\n</html>"
 		);
 		try {
+			// console.log(html)
 			await fs.promises.writeFile(htmlFile, html, "utf-8");
 		} catch (e) {
 			vscode.window.showInformationMessage(msg.admin);
