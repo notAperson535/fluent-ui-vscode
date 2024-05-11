@@ -2,7 +2,8 @@ const vscode = require("vscode");
 const fs = require("fs");
 const path = require("path");
 const msg = require("./messages").messages;
-const uuid = require("uuid");
+// const uuid = require("uuid");
+const { v4: uuidv4 } = require('uuid');
 const fetch = require("node-fetch");
 const Url = require("url");
 const wallpaper = require("wallpaper");
@@ -42,7 +43,7 @@ function activate(context) {
 	// ####  main commands ######################################################
 
 	async function cmdInstall() {
-		const uuidSession = uuid.v4();
+		const uuidSession = uuidv4();
 		await createBackup(uuidSession);
 		await performPatch(uuidSession);
 	}
@@ -167,10 +168,10 @@ function activate(context) {
 		html = html.replace(
 			/(<\/head>)/,
 			`<!-- !! VSCODE-CUSTOM-CSS-SESSION-ID ${uuidSession} !! -->\n` +
-				"<!-- !! VSCODE-CUSTOM-CSS-START !! -->\n" +
-				indicatorJS +
-				injectHTML +
-				"<!-- !! VSCODE-CUSTOM-CSS-END !! -->\n</html>"
+			"<!-- !! VSCODE-CUSTOM-CSS-START !! -->\n" +
+			indicatorJS +
+			injectHTML +
+			"<!-- !! VSCODE-CUSTOM-CSS-END !! -->\n</html>"
 		);
 		try {
 			await fs.promises.writeFile(htmlFile, html, "utf-8");
@@ -255,5 +256,5 @@ function activate(context) {
 exports.activate = activate;
 
 // this method is called when your extension is deactivated
-function deactivate() {}
+function deactivate() { }
 exports.deactivate = deactivate;

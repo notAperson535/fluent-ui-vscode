@@ -42,6 +42,11 @@ body {
     font-family: var(--font-regular) !important;
 }
 
+.split-view-container .split-view-view .pane-composite-part {
+    display: flex !important;
+    flex-direction: column !important;
+}
+
 .tabs-container>.tab .tab-label a,
 .monaco-workbench .part.editor>.content .editor-group-container>.title .title-label a {
     font-family: var(--font-semibold) !important;
@@ -49,6 +54,10 @@ body {
 
 .monaco-workbench .part.panel>.composite.title>.panel-switcher-container>.monaco-action-bar .action-item>.action-label {
     font-family: var(--font-semibold) !important;
+}
+
+.monaco-workbench .part.sidebar>.title {
+    background: none !important;
 }
 
 .sidebar>.title>.title-label h2 {

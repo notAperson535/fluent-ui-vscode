@@ -22,12 +22,10 @@ A Windows 11 theme for VSCode. Based on [be5invis](https://github.com/be5invis)â
 
 ## Background sampling
 
-(To be completed)
-
-If you are not using windows with this theme, make sure to disable background sampling like so:
+If you are using windows and would like to turn on background sampling,make sure to enable it like so:
 
 ```json
-"windows-11-vscode.enableBackground": false
+"windows-11-vscode.enableBackground": true
 ```
 
 ## Enabling different themes

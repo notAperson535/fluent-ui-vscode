@@ -59,7 +59,7 @@
 				"windows-11-vscode.enableBackground": {
 					"description": "Enable desktop background grabbing for Windows 11 for VSCode",
 					"type": "boolean",
-					"default": true
+					"default": false
 				}
 			}
 		}
@@ -73,7 +73,7 @@
 		"node-fetch": "^2.0.0",
 		"replace": "^1.2.2",
 		"sharp": "^0.31.1",
-		"uuid": "^8.3.2",
+		"uuid": "^9.0.1",
 		"wallpaper": "^5.0.1"
 	},
 	"extensionKind": [
