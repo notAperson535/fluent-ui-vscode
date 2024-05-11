@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.2.0
+
+Fixed it again, should work now
+
 ## 2.1.0
 
 Fixed extension not working, made background sampling off by default to avoid issues
