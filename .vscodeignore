@@ -1,4 +1,4 @@
 .vscode/
 .github/
 .prettierrc.yaml
-node_modules/
+# node_modules/
