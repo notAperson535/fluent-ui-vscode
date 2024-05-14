@@ -1,5 +1,8 @@
 # Changelog
 
+## 2.2.1
+Fixed extension ruining workbench.html (was replacing </head> with </html>)
+
 ## 2.2.0
 
 Fixed it again, should work now
