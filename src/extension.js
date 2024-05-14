@@ -168,7 +168,7 @@ function activate(context) {
 			"<!-- !! VSCODE-CUSTOM-CSS-START !! -->\n" +
 			indicatorJS +
 			injectHTML +
-			"<!-- !! VSCODE-CUSTOM-CSS-END !! -->\n</html>"
+			"<!-- !! VSCODE-CUSTOM-CSS-END !! -->\n</head>"
 		);
 		try {
 			// console.log(html)
