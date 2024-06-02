@@ -1,14 +1,19 @@
 :root {
-    --outline: 2px solid #008000;
-    --blurred-background: rgba(0, 128, 0, 0.5);
-    --shadow: 5px 5px 8px #019701;
-    --text-color: white;
+	--outline: 2px solid #008000;
+	--blurred-background: rgba(0, 128, 0, 0.5);
+	--shadow: 5px 5px 8px #019701;
+	--text-color: white;
 }
 
 .monaco-workbench {
-    background: var(--blurred-background) !important;
+	background: var(--blurred-background) !important;
 }
 
-.monaco-workbench .activitybar>.content :not(.monaco-menu)>.monaco-action-bar .action-item:hover {
-    filter: invert(0) !important;
+.monaco-workbench
+	.activitybar
+	> .content
+	:not(.monaco-menu)
+	> .monaco-action-bar
+	.action-item:hover {
+	filter: invert(0) !important;
 }

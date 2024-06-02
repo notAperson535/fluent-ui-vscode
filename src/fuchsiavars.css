@@ -1,52 +1,57 @@
 :root {
-    --outline: 2px solid rgba(242, 126, 198);
-    --blurred-background: rgba(255, 166, 201, 0.5);
-    --shadow: 5px 5px 8px #df72e9;
-    --text-color: black;
+	--outline: 2px solid rgba(242, 126, 198);
+	--blurred-background: rgba(255, 166, 201, 0.5);
+	--shadow: 5px 5px 8px #df72e9;
+	--text-color: black;
 }
 
 .monaco-workbench {
-    background: var(--blurred-background) !important;
+	background: var(--blurred-background) !important;
 }
 
-.monaco-workbench .activitybar>.content :not(.monaco-menu)>.monaco-action-bar .action-item:hover {
-    filter: invert(0) !important;
+.monaco-workbench
+	.activitybar
+	> .content
+	:not(.monaco-menu)
+	> .monaco-action-bar
+	.action-item:hover {
+	filter: invert(0) !important;
 }
 
 .editor-group-letterpress {
-    filter: contrast(0) !important;
+	filter: contrast(0) !important;
 }
 
 .tab {
-    color: white !important;
+	color: white !important;
 }
 
 a.label-name {
-    color: black !important;
+	color: black !important;
 }
 
 .tab[aria-selected="true"] {
-    color: #6e6e6e !important;
+	color: #6e6e6e !important;
 }
 
 .name,
 .ellipsis,
 .suggest-input-container {
-    color: #3f3f3f !important;
+	color: #3f3f3f !important;
 }
 
 .suggest-input-container {
-    background-color: rgba(242, 126, 198) !important;
-    border-radius: 5px !important;
+	background-color: rgba(242, 126, 198) !important;
+	border-radius: 5px !important;
 }
 
 ::before,
 .menu-bar-menu-title,
 .window-title,
 .activity-workbench-view-extension-liveshare-7853dbf2d43be293da8e0881a8ce8673d6237243 {
-    color: purple;
+	color: purple;
 }
 
 .activity-workbench-view-extension-liveshare-7853dbf2d43be293da8e0881a8ce8673d6237243 {
-    background-color: purple !important;
+	background-color: purple !important;
 }

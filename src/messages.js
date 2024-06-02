@@ -10,5 +10,5 @@ exports.messages = {
 	notfound: "Windows 11 for VSCode not found.",
 	reloadAfterVersionUpgrade:
 		"Detected reloading CSS / JS after VSCode is upgraded. " + "Performing application only.",
-	cannotLoad: url => `Cannot load '${url}'. Skipping.`,
+	cannotLoad: url => `Cannot load '${url}'. Skipping.`
 };

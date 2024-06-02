@@ -2,7 +2,7 @@ const vscode = require("vscode");
 const fs = require("fs");
 const path = require("path");
 const msg = require("./messages").messages;
-const { v4: uuidv4 } = require('uuid');
+const { v4: uuidv4 } = require("uuid");
 const fetch = require("node-fetch");
 const Url = require("url");
 const wallpaper = require("wallpaper");
@@ -19,14 +19,14 @@ function activate(context) {
 
 	// Wallpaper
 
-	var base64img = ""
+	var base64img = "";
 
 	async function getDesktopBackground() {
 		const wallPath = await wallpaper.get();
 
-		const img = await sharp(wallPath).blur(100).toBuffer()
+		const img = await sharp(wallPath).blur(100).toBuffer();
 
-		base64img = "data:image/png;base64," + img.toString('base64');
+		base64img = "data:image/png;base64," + img.toString("base64");
 	}
 
 	async function getContent(url) {
@@ -117,40 +117,38 @@ function activate(context) {
 	// #### Patching ##############################################################
 
 	async function performPatch(uuidSession) {
-		let config = vscode.workspace.getConfiguration("windows-11-vscode")
-		let cssfiles = [""]
+		let config = vscode.workspace.getConfiguration("windows-11-vscode");
+		let cssfiles = [""];
 
-		const backgroundonoroff = config.get("enableBackground")
+		const backgroundonoroff = config.get("enableBackground");
 		if (backgroundonoroff == true) {
 			await getDesktopBackground();
 		}
 
 		const colortheme = config.get("theme");
 
-		let windows11vscodeCSS = "file:///" + (path.join(__dirname, "/windows11vscode.css")).replaceAll("\\", "/")
-		let darkvars = "file:///" + (path.join(__dirname, "/darkmodevars.css")).replaceAll("\\", "/")
-		let darkbluevars = "file:///" + (path.join(__dirname, "/darkbluevars.css")).replaceAll("\\", "/")
-		let grayvars = "file:///" + (path.join(__dirname, "/grayvars.css")).replaceAll("\\", "/")
-		let greenvars = "file:///" + (path.join(__dirname, "/greenvars.css")).replaceAll("\\", "/")
-		let fuchsiavars = "file:///" + (path.join(__dirname, "/fuchsiavars.css")).replaceAll("\\", "/")
+		let windows11vscodeCSS =
+			"file:///" + path.join(__dirname, "/windows11vscode.css").replaceAll("\\", "/");
+		let darkvars = "file:///" + path.join(__dirname, "/darkmodevars.css").replaceAll("\\", "/");
+		let darkbluevars =
+			"file:///" + path.join(__dirname, "/darkbluevars.css").replaceAll("\\", "/");
+		let grayvars = "file:///" + path.join(__dirname, "/grayvars.css").replaceAll("\\", "/");
+		let greenvars = "file:///" + path.join(__dirname, "/greenvars.css").replaceAll("\\", "/");
+		let fuchsiavars =
+			"file:///" + path.join(__dirname, "/fuchsiavars.css").replaceAll("\\", "/");
 
 		if (colortheme == "dark") {
-			cssfiles = [windows11vscodeCSS, darkvars]
-		}
-		else if (colortheme == "darkblue") {
-			cssfiles = [windows11vscodeCSS, darkbluevars]
-		}
-		else if (colortheme == "gray") {
-			cssfiles = [windows11vscodeCSS, grayvars]
-		}
-		else if (colortheme == "green") {
-			cssfiles = [windows11vscodeCSS, greenvars]
-		}
-		else if (colortheme == "fuchsia") {
-			cssfiles = [windows11vscodeCSS, fuchsiavars]
-		}
-		else {
-			cssfiles = [windows11vscodeCSS]
+			cssfiles = [windows11vscodeCSS, darkvars];
+		} else if (colortheme == "darkblue") {
+			cssfiles = [windows11vscodeCSS, darkbluevars];
+		} else if (colortheme == "gray") {
+			cssfiles = [windows11vscodeCSS, grayvars];
+		} else if (colortheme == "green") {
+			cssfiles = [windows11vscodeCSS, greenvars];
+		} else if (colortheme == "fuchsia") {
+			cssfiles = [windows11vscodeCSS, fuchsiavars];
+		} else {
+			cssfiles = [windows11vscodeCSS];
 		}
 
 		let html = await fs.promises.readFile(htmlFile, "utf-8");
@@ -158,17 +156,17 @@ function activate(context) {
 
 		const injectHTML = await patchHtml(cssfiles);
 		html = html.replace(/<meta.*http-equiv="Content-Security-Policy".*>/, "");
-		console.log(html)
+		console.log(html);
 
 		let indicatorJS = "";
 
 		html = html.replace(
 			/(<\/head>)/,
 			`<!-- !! VSCODE-CUSTOM-CSS-SESSION-ID ${uuidSession} !! -->\n` +
-			"<!-- !! VSCODE-CUSTOM-CSS-START !! -->\n" +
-			indicatorJS +
-			injectHTML +
-			"<!-- !! VSCODE-CUSTOM-CSS-END !! -->\n</head>"
+				"<!-- !! VSCODE-CUSTOM-CSS-START !! -->\n" +
+				indicatorJS +
+				injectHTML +
+				"<!-- !! VSCODE-CUSTOM-CSS-END !! -->\n</head>"
 		);
 		try {
 			// console.log(html)
@@ -254,5 +252,5 @@ function activate(context) {
 exports.activate = activate;
 
 // this method is called when your extension is deactivated
-function deactivate() { }
+function deactivate() {}
 exports.deactivate = deactivate;

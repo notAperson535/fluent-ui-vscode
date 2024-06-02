@@ -1,7 +1,12 @@
 # Changelog
 
+## 2.2.2
+
+Fixed (Finally), formatting changes
+
 ## 2.2.1
-Fixed extension ruining workbench.html (was replacing </head> with </html>)
+
+Fixed extension ruining workbench.html (was replacing `</head>` with `</html>`)
 
 ## 2.2.0
 
